@@ -30,19 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelHeading = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.labelHeading = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.panelBottom = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnReceivable = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
@@ -51,14 +38,25 @@
             this.btnSupplier = new System.Windows.Forms.Button();
             this.btnSale = new System.Windows.Forms.Button();
             this.btnPurchase = new System.Windows.Forms.Button();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelHeading = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelHeading = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelDesktop = new System.Windows.Forms.Panel();
+            this.panelBottom = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelHeading.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panelBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -79,146 +77,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(270, 726);
             this.panelMenu.TabIndex = 0;
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.Transparent;
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(270, 78);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // panelHeading
-            // 
-            this.panelHeading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(74)))), ((int)(((byte)(88)))));
-            this.panelHeading.Controls.Add(this.panel1);
-            this.panelHeading.Controls.Add(this.menuStrip1);
-            this.panelHeading.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeading.Location = new System.Drawing.Point(270, 0);
-            this.panelHeading.Margin = new System.Windows.Forms.Padding(4);
-            this.panelHeading.Name = "panelHeading";
-            this.panelHeading.Size = new System.Drawing.Size(1272, 78);
-            this.panelHeading.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.labelHeading);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 31);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1272, 47);
-            this.panel1.TabIndex = 3;
-            // 
-            // labelHeading
-            // 
-            this.labelHeading.AutoSize = true;
-            this.labelHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeading.ForeColor = System.Drawing.Color.White;
-            this.labelHeading.Location = new System.Drawing.Point(8, 8);
-            this.labelHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelHeading.Name = "labelHeading";
-            this.labelHeading.Size = new System.Drawing.Size(86, 31);
-            this.labelHeading.TabIndex = 0;
-            this.labelHeading.Text = "Home";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(111)))), ((int)(((byte)(133)))));
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.employeeToolStripMenuItem,
-            this.customersToolStripMenuItem,
-            this.backupToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1272, 31);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // employeeToolStripMenuItem
-            // 
-            this.employeeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(100, 27);
-            this.employeeToolStripMenuItem.Text = "Employee";
-            // 
-            // backupToolStripMenuItem
-            // 
-            this.backupToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(81, 27);
-            this.backupToolStripMenuItem.Text = "Backup";
-            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(60, 27);
-            this.helpToolStripMenuItem.Text = "Help";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
-            // 
-            // customersToolStripMenuItem
-            // 
-            this.customersToolStripMenuItem.AutoToolTip = true;
-            this.customersToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(106, 27);
-            this.customersToolStripMenuItem.Text = "Customers";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 4);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(735, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "© 2025 OmniMart360 | Version 1.0 | Build: 1.0.0.20250922 | License: Trial | Power" +
-                "ed by Buizenida";
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.BackColor = System.Drawing.Color.Gray;
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(270, 78);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1272, 620);
-            this.panelDesktop.TabIndex = 3;
-            // 
-            // panelBottom
-            // 
-            this.panelBottom.Controls.Add(this.label1);
-            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(270, 698);
-            this.panelBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(1272, 28);
-            this.panelBottom.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1224, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 35);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button6
             // 
@@ -396,6 +254,17 @@
             this.btnPurchase.UseVisualStyleBackColor = true;
             this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.Transparent;
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(270, 78);
+            this.panelLogo.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -407,6 +276,118 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panelHeading
+            // 
+            this.panelHeading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(74)))), ((int)(((byte)(88)))));
+            this.panelHeading.Controls.Add(this.panel1);
+            this.panelHeading.Controls.Add(this.menuStrip1);
+            this.panelHeading.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeading.Location = new System.Drawing.Point(270, 0);
+            this.panelHeading.Margin = new System.Windows.Forms.Padding(4);
+            this.panelHeading.Name = "panelHeading";
+            this.panelHeading.Size = new System.Drawing.Size(1272, 78);
+            this.panelHeading.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelHeading);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1272, 47);
+            this.panel1.TabIndex = 3;
+            // 
+            // labelHeading
+            // 
+            this.labelHeading.AutoSize = true;
+            this.labelHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeading.ForeColor = System.Drawing.Color.White;
+            this.labelHeading.Location = new System.Drawing.Point(8, 8);
+            this.labelHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHeading.Name = "labelHeading";
+            this.labelHeading.Size = new System.Drawing.Size(86, 31);
+            this.labelHeading.TabIndex = 0;
+            this.labelHeading.Text = "Home";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1224, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(35, 35);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(111)))), ((int)(((byte)(133)))));
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backupToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1272, 31);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // backupToolStripMenuItem
+            // 
+            this.backupToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(81, 27);
+            this.backupToolStripMenuItem.Text = "Backup";
+            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(60, 27);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(735, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "© 2025 OmniMart360 | Version 1.0 | Build: 1.0.0.20250922 | License: Trial | Power" +
+                "ed by Buizenida";
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.BackColor = System.Drawing.Color.Gray;
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(270, 78);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(1272, 620);
+            this.panelDesktop.TabIndex = 3;
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.Controls.Add(this.label1);
+            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBottom.Location = new System.Drawing.Point(270, 698);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.panelBottom.Name = "panelBottom";
+            this.panelBottom.Size = new System.Drawing.Size(1272, 28);
+            this.panelBottom.TabIndex = 2;
             // 
             // HomePage
             // 
@@ -427,6 +408,7 @@
             this.Load += new System.EventHandler(this.HomePage_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelHeading.ResumeLayout(false);
             this.panelHeading.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -435,7 +417,6 @@
             this.menuStrip1.PerformLayout();
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -460,10 +441,8 @@
         private System.Windows.Forms.Button btnReceivable;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
         private System.Windows.Forms.Button button6;
     }
 }

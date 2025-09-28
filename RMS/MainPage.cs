@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace RMS
 {
@@ -45,7 +46,7 @@ namespace RMS
                 decimal totalSales = resultSales != DBNull.Value ? Convert.ToDecimal(resultSales) : 0;
                 kpisales.Text = FormatIndianCurrency(totalSales);
 
-
+                // Query 3: Total Profit
                 string queryProfit = @"SELECT 
                                 (SELECT SUM(totalamount) FROM receipts) - 
                                 (SELECT SUM(quantity * purchaserate) FROM solditems) AS Profit;";
@@ -54,6 +55,7 @@ namespace RMS
                 decimal profit = resultProfit != DBNull.Value ? Convert.ToDecimal(resultProfit) : 0;
                 kpiProfit.Text = FormatIndianCurrency(profit);
 
+                // Query 4: Total Receivable
                 string queryReceivable = "select sum(remaining) from receivable;";
                 MySqlCommand cmdReceivable = new MySqlCommand(queryReceivable, c1);
                 object resultReceivable = cmdReceivable.ExecuteScalar();
@@ -61,10 +63,32 @@ namespace RMS
                 kpiIReceivable.Text = FormatIndianCurrency(receivable);
                 
 
+                /*
+                 * Add Chart Here or create function
+                 */
+                string queryChart = "select itemname,sum(sellingrate) as sales from solditems group by itemname;"; 
+                DataTable dt = new DataTable(); 
+                MySqlDataAdapter da = new MySqlDataAdapter(queryChart, c1); 
+                da.Fill(dt); 
+                chart1.DataSource = dt; 
+                chart1.Series["sales"].XValueMember = "itemname"; 
+                chart1.Series["sales"].YValueMembers = "sales";
+
+                chart1.Legends[0].Enabled = true;
+                chart1.Legends[0].Docking = Docking.Bottom;
+
+                chart1.Titles.Add("Sales by Product");
+
+
+
+
+
+
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                MessageBox.Show("Error: " + ex.Message);
             }
             finally
             {

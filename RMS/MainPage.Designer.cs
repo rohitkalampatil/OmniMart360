@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panKpis = new System.Windows.Forms.Panel();
             this.lblOwner = new System.Windows.Forms.Label();
             this.tblKpi = new System.Windows.Forms.TableLayoutPanel();
@@ -48,7 +51,8 @@
             this.lblKpiItems = new System.Windows.Forms.Label();
             this.kpiIReceivable = new System.Windows.Forms.Label();
             this.picKpiItems = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panMain = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panKpis.SuspendLayout();
             this.tblKpi.SuspendLayout();
             this.panKpiProfit.SuspendLayout();
@@ -59,6 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picKpiMargin)).BeginInit();
             this.panKpiItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picKpiItems)).BeginInit();
+            this.panMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panKpis
@@ -303,14 +309,34 @@
             this.picKpiItems.TabIndex = 0;
             this.picKpiItems.TabStop = false;
             // 
-            // panel1
+            // panMain
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 193);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1361, 530);
-            this.panel1.TabIndex = 4;
+            this.panMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
+            this.panMain.Controls.Add(this.chart1);
+            this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panMain.Location = new System.Drawing.Point(0, 193);
+            this.panMain.Name = "panMain";
+            this.panMain.Size = new System.Drawing.Size(1361, 530);
+            this.panMain.TabIndex = 4;
+            // 
+            // chart1
+            // 
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(28, 6);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Legend = "Legend1";
+            series2.Name = "sales";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(584, 512);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
             // MainPage
             // 
@@ -318,7 +344,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1361, 723);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panMain);
             this.Controls.Add(this.panKpis);
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -340,6 +366,8 @@
             this.panKpiItems.ResumeLayout(false);
             this.panKpiItems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picKpiItems)).EndInit();
+            this.panMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,6 +393,7 @@
         private System.Windows.Forms.Label lblKpiSales;
         private System.Windows.Forms.Label lblKpiMargin;
         private System.Windows.Forms.Label lblKpiItems;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panMain;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
