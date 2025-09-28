@@ -1,0 +1,48 @@
+G:\Microsoft Visual Studio\RMS\RMS\bin\Debug\RMS.exe.config
+G:\Microsoft Visual Studio\RMS\RMS\bin\Debug\RMS.exe
+G:\Microsoft Visual Studio\RMS\RMS\bin\Debug\RMS.pdb
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\BMS.csprojResolveAssemblyReference.cache
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.ChangePassword.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.Form1.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.PurchaseReport.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.InventoryPage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.Login.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.Profile.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.ProfileInfo.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.PurchasePage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.HomePage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.Properties.Resources.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.PurchaseUpdate.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.ReceiiptsPage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.ReceiptUpdate.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.SalePage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.SaleReceiptView.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.SupplierPage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\BMS.csproj.GenerateResource.Cache
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.exe
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.pdb
+C:\Users\USER\Downloads\RMS-main\RMS\bin\Debug\RMS.exe.config
+C:\Users\USER\Downloads\RMS-main\RMS\obj\x86\Debug\RMS.exe
+C:\Users\USER\Downloads\RMS-main\RMS\obj\x86\Debug\RMS.pdb
+G:\Courses\C#\RMS-main\RMS\bin\Debug\RMS.exe.config
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.exe
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.pdb
+G:\Courses\C#\RMS-main\RMS\bin\Debug\BMS.exe.config
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\BMS.csprojResolveAssemblyReference.cache
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.ChangePassword.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.Form1.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.PurchaseReport.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.InventoryPage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.Login.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.Profile.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.ProfileInfo.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.PurchasePage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.HomePage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\BMS.Properties.Resources.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.PurchaseUpdate.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.ReceiiptsPage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.ReceiptUpdate.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.SalePage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.SaleReceiptView.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.SupplierPage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\BMS.csproj.GenerateResource.Cache

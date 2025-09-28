@@ -1,0 +1,102 @@
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\RMS.exe.config
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\RMS.exe
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\RMS.pdb
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\FlashControlV71.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\MySql.Data.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\stdole.dll
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\bin\Debug\MySql.Data.xml
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.csproj.AssemblyReference.cache
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.ChangePassword.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.Form1.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.PurchaseReport.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.InventoryPage.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.Login.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.Profile.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.ProfileInfo.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.PurchasePage.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.HomePage.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.Properties.Resources.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.PurchaseUpdate.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.ReceiiptsPage.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.ReceiptUpdate.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.SalePage.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.SaleReceiptView.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.SupplierPage.resources
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.csproj.GenerateResource.cache
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.csproj.CoreCompileInputs.cache
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.csproj.Up2Date
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.exe
+C:\Users\MASTER\Documents\MicrosoftVisualStudioProject\RMS\RMS\obj\x86\Debug\RMS.pdb
+G:\Microsoft Visual Studio\RMS\RMS\bin\Debug\RMS.exe.config
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.exe
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.pdb
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.ChangePassword.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.Form1.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.PurchaseReport.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.InventoryPage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.Login.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.Profile.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.ProfileInfo.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.PurchasePage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.HomePage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.Properties.Resources.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.PurchaseUpdate.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.ReceiiptsPage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.ReceiptUpdate.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.SalePage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.SaleReceiptView.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.SupplierPage.resources
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.csproj.GenerateResource.Cache
+G:\Microsoft Visual Studio\RMS\RMS\bin\Debug\RMS.exe
+G:\Microsoft Visual Studio\RMS\RMS\bin\Debug\RMS.pdb
+G:\Microsoft Visual Studio\RMS\RMS\obj\x86\Debug\RMS.csprojResolveAssemblyReference.cache
+G:\Courses\C#\RMS-main\RMS\bin\Debug\RMS.exe.config
+G:\Courses\C#\RMS-main\RMS\bin\Debug\RMS.exe
+G:\Courses\C#\RMS-main\RMS\bin\Debug\RMS.pdb
+G:\Courses\C#\RMS-main\RMS\bin\Debug\BouncyCastle.Crypto.dll
+G:\Courses\C#\RMS-main\RMS\bin\Debug\itextsharp.dll
+G:\Courses\C#\RMS-main\RMS\bin\Debug\itextsharp.xml
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.BackupData.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.ChangePassword.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.Help.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.MainPage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.PurchaseReport.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.InventoryPage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.Login.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.Profile.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.ProfileInfo.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.PurchasePage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.HomePage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.Properties.Resources.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.PurchaseUpdate.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.ReceiiptsPage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.ReceiptUpdate.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.SalePage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.SaleReceiptView.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.SupplierPage.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.csproj.GenerateResource.Cache
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.exe
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.pdb
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.csprojResolveAssemblyReference.cache
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.Receivable.resources
+G:\Courses\C#\RMS-main\RMS\obj\x86\Debug\RMS.ReceivableDetailscs.resources

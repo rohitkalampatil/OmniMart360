@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMS", "RMS\RMS.csproj", "{928B6039-F0DA-436E-84B3-0AE3BA74FAF9}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OmniMart360", "OmniMart360\OmniMart360.vdproj", "{4A9629A4-A7CC-4CCA-A872-5246416E80EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{928B6039-F0DA-436E-84B3-0AE3BA74FAF9}.Debug|x86.ActiveCfg = Debug|x86
+		{928B6039-F0DA-436E-84B3-0AE3BA74FAF9}.Debug|x86.Build.0 = Debug|x86
+		{928B6039-F0DA-436E-84B3-0AE3BA74FAF9}.Release|x86.ActiveCfg = Release|x86
+		{928B6039-F0DA-436E-84B3-0AE3BA74FAF9}.Release|x86.Build.0 = Release|x86
+		{4A9629A4-A7CC-4CCA-A872-5246416E80EA}.Debug|x86.ActiveCfg = Debug
+		{4A9629A4-A7CC-4CCA-A872-5246416E80EA}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		        SolutionGuid = {01D773E7-1EC7-4323-9AF0-E3162043A059}
+	EndGlobalSection
+EndGlobal
