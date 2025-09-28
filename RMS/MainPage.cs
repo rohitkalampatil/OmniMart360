@@ -31,6 +31,36 @@ namespace RMS
             {
                 c1.Open();
 
+                // Query 1: Total Purchase
+                string queryPurchase = "SELECT SUM(total_bill) FROM purchase;";
+                MySqlCommand cmdPurchase = new MySqlCommand(queryPurchase, c1);
+                object resultPurchase = cmdPurchase.ExecuteScalar();
+                decimal totalPurchase = resultPurchase != DBNull.Value ? Convert.ToDecimal(resultPurchase) : 0;
+                kpiPurchase.Text = FormatIndianCurrency(totalPurchase);
+
+                // Query 2: Total Sales
+                string querySales = "SELECT SUM(totalamount) FROM receipts;";
+                MySqlCommand cmdSales = new MySqlCommand(querySales, c1);
+                object resultSales = cmdSales.ExecuteScalar();
+                decimal totalSales = resultSales != DBNull.Value ? Convert.ToDecimal(resultSales) : 0;
+                kpisales.Text = FormatIndianCurrency(totalSales);
+
+
+                string queryProfit = @"SELECT 
+                                (SELECT SUM(totalamount) FROM receipts) - 
+                                (SELECT SUM(quantity * purchaserate) FROM solditems) AS Profit;";
+                MySqlCommand cmdProfit = new MySqlCommand(queryProfit, c1);
+                object resultProfit = cmdProfit.ExecuteScalar();
+                decimal profit = resultProfit != DBNull.Value ? Convert.ToDecimal(resultProfit) : 0;
+                kpiProfit.Text = FormatIndianCurrency(profit);
+
+                string queryReceivable = "select sum(remaining) from receivable;";
+                MySqlCommand cmdReceivable = new MySqlCommand(queryReceivable, c1);
+                object resultReceivable = cmdReceivable.ExecuteScalar();
+                decimal receivable = resultProfit != DBNull.Value ? Convert.ToDecimal(resultReceivable) : 0;
+                kpiIReceivable.Text = FormatIndianCurrency(receivable);
+                
+
             }
             catch (Exception ex)
             {
@@ -48,6 +78,20 @@ namespace RMS
 
         }
 
-       
+        public static string FormatIndianCurrency(decimal number)
+        {
+            if (number >= 10000000)
+                return "₹" + (number / 10000000m).ToString("0.#") + " Cr";
+            else if (number >= 100000)
+                return "₹" + (number / 100000m).ToString("0.#") + " L";
+            else if (number >= 1000)
+                return "₹" + (number / 1000m).ToString("0.#") + " K";
+            else
+                return "₹" + number.ToString("0");
+        }
+
+
+
+
     }
 }
