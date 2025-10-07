@@ -58,41 +58,92 @@ namespace RMS
         {
             if (textPassword.Text == "")
             {
-                MessageBox.Show("Please enter your password to continue", "OmniMart360 version 1.0", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Please enter your password to continue", "OmniMart360 version 1.0", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textPassword.Focus();
+                return;
             }
-            else
-            {
-                connection.Open();
-                try
-                {
-                    command = new MySqlCommand("select password from users", connection);
 
-                    if (textPassword.Text == command.ExecuteScalar().ToString())
+            connection.Open();
+            try
+            {
+                // Get user record matching password
+                command = new MySqlCommand("SELECT password, days, updatedat FROM users WHERE password = @password", connection);
+                command.Parameters.AddWithValue("@password", textPassword.Text);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
                     {
-                        this.DialogResult= DialogResult.OK;
+                        int daylogin = reader.GetInt32("days");
+                        DateTime? updatedAt = reader.IsDBNull(reader.GetOrdinal("updatedat")) ? (DateTime?)null : reader.GetDateTime("updatedat");
+                        DateTime today = DateTime.Today;
+                        MessageBox.Show("Updated: "+updatedAt+"\nToday: "+today);
+                        if (daylogin <= 0)
+                        {
+                            MessageBox.Show("Your trial period has expired.", "OmniMart360 version 1.0", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        bool shouldUpdate = false;
+
+                        if (updatedAt == null)
+                        {
+                            daylogin -= 1;
+                            shouldUpdate = true;
+                        }
+                        else
+                        {
+                            //int daysDiff = (updatedAt.Value-today).Days;
+                            // for 24 hourse
+
+                            // for date only
+                            int daysDiff = (today.Date - updatedAt.Value.Date).Days;
+
+                            MessageBox.Show(""+daysDiff);
+                            if (daysDiff >= 1)
+                            {
+                                daylogin -= 1;
+                                shouldUpdate = true;
+                            }
+                        }
+
+                        reader.Close(); // Close before executing another command
+                        MessageBox.Show(""+shouldUpdate);
+                        if (shouldUpdate)
+                        {
+                            using (MySqlCommand updateCommand = new MySqlCommand("UPDATE users SET days = @daylogin, updatedat = @updatedAt WHERE password = @password", connection))
+                            {
+                                updateCommand.Parameters.AddWithValue("@daylogin", daylogin);
+                                updateCommand.Parameters.AddWithValue("@updatedAt", today);
+                                updateCommand.Parameters.AddWithValue("@password", textPassword.Text);
+                                updateCommand.ExecuteNonQuery();
+                            }
+                        }
+
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("You entered wrong password.", "OmniMart360 version 1.0", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("You entered wrong password.", "OmniMart360 version 1.0", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         textPassword.Text = "";
                         textPassword.Focus();
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error!\n"+ex.Message, "OmniMart360 version 1.0", MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    textPassword.Text = "";
-                    textPassword.Focus();
-                }
-                finally
-                {
-                    if (connection.State == ConnectionState.Open)
-                        connection.Close();
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!\n" + ex.Message, "OmniMart360 version 1.0", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textPassword.Text = "";
+                textPassword.Focus();
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
             }
         }
+
 
 
     }
