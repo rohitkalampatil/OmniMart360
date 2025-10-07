@@ -225,6 +225,7 @@
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(630, 431);

@@ -77,7 +77,7 @@ namespace RMS
                         int daylogin = reader.GetInt32("days");
                         DateTime? updatedAt = reader.IsDBNull(reader.GetOrdinal("updatedat")) ? (DateTime?)null : reader.GetDateTime("updatedat");
                         DateTime today = DateTime.Today;
-                        MessageBox.Show("Updated: "+updatedAt+"\nToday: "+today);
+                        
                         if (daylogin <= 0)
                         {
                             MessageBox.Show("Your trial period has expired.", "OmniMart360 version 1.0", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -99,7 +99,7 @@ namespace RMS
                             // for date only
                             int daysDiff = (today.Date - updatedAt.Value.Date).Days;
 
-                            MessageBox.Show(""+daysDiff);
+                            
                             if (daysDiff >= 1)
                             {
                                 daylogin -= 1;
@@ -108,7 +108,7 @@ namespace RMS
                         }
 
                         reader.Close(); // Close before executing another command
-                        MessageBox.Show(""+shouldUpdate);
+                        
                         if (shouldUpdate)
                         {
                             using (MySqlCommand updateCommand = new MySqlCommand("UPDATE users SET days = @daylogin, updatedat = @updatedAt WHERE password = @password", connection))

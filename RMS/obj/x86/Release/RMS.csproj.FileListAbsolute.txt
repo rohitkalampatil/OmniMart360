@@ -44,14 +44,11 @@ G:\Courses\C#\RMS-main\RMS\obj\x86\Release\RMS.Form1.resources
 G:\Courses\C#\RMS-main\RMS\obj\x86\Release\RMS.Help.resources
 G:\Courses\C#\RMS-main\RMS\obj\x86\Release\RMS.MainPage.resources
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\RMS.exe.config
-G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.exe
-G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.pdb
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\RMS.exe
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\RMS.pdb
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\BouncyCastle.Crypto.dll
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\itextsharp.dll
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\itextsharp.xml
-G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.csprojResolveAssemblyReference.cache
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.BackupData.resources
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.ChangePassword.resources
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.Help.resources
@@ -73,3 +70,6 @@ G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.SalePage.r
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.SaleReceiptView.resources
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.SupplierPage.resources
 G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.csproj.GenerateResource.Cache
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.exe
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.pdb
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.csprojResolveAssemblyReference.cache

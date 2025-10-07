@@ -36,6 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchasePage));
             this.textInvoiceNo = new System.Windows.Forms.TextBox();
             this.dateTime = new System.Windows.Forms.DateTimePicker();
             this.textSupplierEmail = new System.Windows.Forms.TextBox();
@@ -73,8 +74,8 @@
             this.mainPan = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.purchaseReport = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.purchaseReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataItems)).BeginInit();
             this.rightPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -580,6 +581,15 @@
             this.panel2.Size = new System.Drawing.Size(918, 66);
             this.panel2.TabIndex = 3;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(200, 24);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Enter Purchased Items";
+            // 
             // purchaseReport
             // 
             this.purchaseReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -592,15 +602,6 @@
             this.purchaseReport.UseVisualStyleBackColor = true;
             this.purchaseReport.Click += new System.EventHandler(this.purchaseReport_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(200, 24);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Enter Purchased Items";
-            // 
             // PurchasePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -610,6 +611,7 @@
             this.Controls.Add(this.mainPan);
             this.Controls.Add(this.rightPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

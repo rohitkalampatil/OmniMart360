@@ -57,8 +57,8 @@
             // 
             // textCurrentpass
             // 
-            this.textCurrentpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textCurrentpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textCurrentpass.BackColor = System.Drawing.Color.White;
             this.textCurrentpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textCurrentpass.Font = new System.Drawing.Font("Segoe UI", 14.25F);
@@ -67,13 +67,13 @@
             this.textCurrentpass.MaxLength = 8;
             this.textCurrentpass.Name = "textCurrentpass";
             this.textCurrentpass.PasswordChar = '*';
-            this.textCurrentpass.Size = new System.Drawing.Size(386, 26);
+            this.textCurrentpass.Size = new System.Drawing.Size(386, 32);
             this.textCurrentpass.TabIndex = 1;
             // 
             // textNewpass
             // 
-            this.textNewpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textNewpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textNewpass.BackColor = System.Drawing.Color.White;
             this.textNewpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textNewpass.Font = new System.Drawing.Font("Segoe UI", 14.25F);
@@ -82,13 +82,13 @@
             this.textNewpass.MaxLength = 8;
             this.textNewpass.Name = "textNewpass";
             this.textNewpass.PasswordChar = '*';
-            this.textNewpass.Size = new System.Drawing.Size(385, 26);
+            this.textNewpass.Size = new System.Drawing.Size(385, 32);
             this.textNewpass.TabIndex = 1;
             // 
             // textConfirmpass
             // 
-            this.textConfirmpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textConfirmpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textConfirmpass.BackColor = System.Drawing.Color.White;
             this.textConfirmpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textConfirmpass.Font = new System.Drawing.Font("Segoe UI", 14.25F);
@@ -97,7 +97,7 @@
             this.textConfirmpass.MaxLength = 8;
             this.textConfirmpass.Name = "textConfirmpass";
             this.textConfirmpass.PasswordChar = '*';
-            this.textConfirmpass.Size = new System.Drawing.Size(385, 26);
+            this.textConfirmpass.Size = new System.Drawing.Size(385, 32);
             this.textConfirmpass.TabIndex = 1;
             // 
             // btnChange
@@ -138,7 +138,7 @@
             this.lblCurrentpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentpass.Location = new System.Drawing.Point(214, 122);
             this.lblCurrentpass.Name = "lblCurrentpass";
-            this.lblCurrentpass.Size = new System.Drawing.Size(0, 16);
+            this.lblCurrentpass.Size = new System.Drawing.Size(0, 20);
             this.lblCurrentpass.TabIndex = 3;
             // 
             // lblNewpass
@@ -147,7 +147,7 @@
             this.lblNewpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewpass.Location = new System.Drawing.Point(214, 218);
             this.lblNewpass.Name = "lblNewpass";
-            this.lblNewpass.Size = new System.Drawing.Size(0, 16);
+            this.lblNewpass.Size = new System.Drawing.Size(0, 20);
             this.lblNewpass.TabIndex = 3;
             // 
             // lblConfirmpass
@@ -156,7 +156,7 @@
             this.lblConfirmpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmpass.Location = new System.Drawing.Point(214, 314);
             this.lblConfirmpass.Name = "lblConfirmpass";
-            this.lblConfirmpass.Size = new System.Drawing.Size(0, 16);
+            this.lblConfirmpass.Size = new System.Drawing.Size(0, 20);
             this.lblConfirmpass.TabIndex = 3;
             // 
             // panel1
@@ -181,7 +181,7 @@
             this.label4.Location = new System.Drawing.Point(18, 22);
             this.label4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 25);
+            this.label4.Size = new System.Drawing.Size(238, 32);
             this.label4.TabIndex = 6;
             this.label4.Text = "Reset Your Password";
             // 
@@ -204,7 +204,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(152)))), ((int)(((byte)(222)))));
             this.label5.Location = new System.Drawing.Point(4, 4);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 20);
+            this.label5.Size = new System.Drawing.Size(207, 25);
             this.label5.TabIndex = 3;
             this.label5.Text = "Confirm Your Password";
             // 
@@ -227,7 +227,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(152)))), ((int)(((byte)(222)))));
             this.label7.Location = new System.Drawing.Point(4, 4);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(142, 20);
+            this.label7.Size = new System.Drawing.Size(183, 25);
             this.label7.TabIndex = 3;
             this.label7.Text = "Enter New Password";
             // 
@@ -250,7 +250,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(152)))), ((int)(((byte)(222)))));
             this.label6.Location = new System.Drawing.Point(4, 4);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 20);
+            this.label6.Size = new System.Drawing.Size(203, 25);
             this.label6.TabIndex = 3;
             this.label6.Text = "Your Current Password";
             // 
@@ -280,7 +280,7 @@
             // 
             // ChangePassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(590, 461);
@@ -290,6 +290,7 @@
             this.Controls.Add(this.lblNewpass);
             this.Controls.Add(this.lblCurrentpass);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ChangePassword";
             this.Text = "ChangePassword";
