@@ -39,6 +39,7 @@ namespace RMS
             textDiscount.Text = "0";
             textAmount.Text = "0.00";
             lblItems.Text = "0";
+            numericUpDown1.Value = 1;
             cmbItems.Focus();
             LoadNewInvoice();
             populateItem();
@@ -131,6 +132,7 @@ namespace RMS
             lblItems.Text = itemCount.ToString();
             textTotalAmount.Text = tamount.ToString();
             textAmount.Text = tamount.ToString();
+            txtRemainingAmount.Text = tamount.ToString();
             textDiscount.Text = "0";
         }        
         
@@ -148,6 +150,7 @@ namespace RMS
                 disc = Convert.ToInt32(textDiscount.Text);
                 bill = tamount - (tamount * disc / 100);
                 textAmount.Text = bill.ToString();
+                txtRemainingAmount.Text = bill.ToString();
             }
         }
         // Allow user t input numbers only
@@ -421,10 +424,14 @@ namespace RMS
                     object result = cmd.ExecuteScalar();
                     if (result != null)
                     {
-                        txtRate.Text = Convert.ToDecimal(result).ToString("0.00");
+                        decimal rate = Convert.ToDecimal(result);
+                        int qty = Convert.ToInt32(numericUpDown1.Value);
+                        decimal amount = rate * qty;
+                        txtRate.Text = rate.ToString("0.00");
                         //is user chandes later his selection
-                        txtAmt.Text = "0.00";
-                        numericUpDown1.Value = 0;
+
+                        txtAmt.Text = amount.ToString("0.00");
+                        numericUpDown1.Value = 1;
                     }
                     else
                     {

@@ -74,6 +74,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.purchaseReport = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataItems)).BeginInit();
             this.rightPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -360,12 +361,13 @@
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataItems.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataItems.EnableHeadersVisualStyles = false;
             this.dataItems.Location = new System.Drawing.Point(0, 0);
             this.dataItems.Margin = new System.Windows.Forms.Padding(4);
@@ -378,6 +380,8 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataItems.RowHeadersVisible = false;
+            this.dataItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataItems.Size = new System.Drawing.Size(918, 594);
             this.dataItems.TabIndex = 7;
             this.dataItems.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataItems_CellEndEdit);
@@ -568,6 +572,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.purchaseReport);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -586,6 +591,15 @@
             this.purchaseReport.Text = "Report";
             this.purchaseReport.UseVisualStyleBackColor = true;
             this.purchaseReport.Click += new System.EventHandler(this.purchaseReport_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(200, 24);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Enter Purchased Items";
             // 
             // PurchasePage
             // 
@@ -619,6 +633,7 @@
             this.mainPan.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -663,5 +678,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button purchaseReport;
+        private System.Windows.Forms.Label label4;
     }
 }

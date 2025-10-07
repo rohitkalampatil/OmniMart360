@@ -260,6 +260,8 @@ namespace RMS
                             if (r > 0)
                             {
                                 I -= qty;
+                                // here update item based on old price 
+                                // like if same name item is present then update whoes prate or s rate is diff
                                 query = "update inventory set qty=" + I + ", purchase_rate=" + prate + ",selling_rate=" + srate + " where name='" + item + "';";
                                 cmd = new MySqlCommand(query, conn);
                                 cmd.ExecuteNonQuery();

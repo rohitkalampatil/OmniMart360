@@ -43,3 +43,33 @@ G:\Courses\C#\RMS-main\RMS\obj\x86\Release\RMS.BackupData.resources
 G:\Courses\C#\RMS-main\RMS\obj\x86\Release\RMS.Form1.resources
 G:\Courses\C#\RMS-main\RMS\obj\x86\Release\RMS.Help.resources
 G:\Courses\C#\RMS-main\RMS\obj\x86\Release\RMS.MainPage.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\RMS.exe.config
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.exe
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.pdb
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\RMS.exe
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\RMS.pdb
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\BouncyCastle.Crypto.dll
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\itextsharp.dll
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\bin\Release\itextsharp.xml
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.csprojResolveAssemblyReference.cache
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.BackupData.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.ChangePassword.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.Help.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.MainPage.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.PurchaseReport.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.InventoryPage.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.Login.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.Profile.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.ProfileInfo.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.PurchasePage.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.HomePage.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.Properties.Resources.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.PurchaseUpdate.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.ReceiiptsPage.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.ReceiptUpdate.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.Receivable.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.ReceivableDetailscs.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.SalePage.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.SaleReceiptView.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.SupplierPage.resources
+G:\Courses\C#\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Release\RMS.csproj.GenerateResource.Cache

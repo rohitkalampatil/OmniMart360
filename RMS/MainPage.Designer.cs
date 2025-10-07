@@ -32,6 +32,9 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panKpis = new System.Windows.Forms.Panel();
             this.lblOwner = new System.Windows.Forms.Label();
             this.tblKpi = new System.Windows.Forms.TableLayoutPanel();
@@ -53,6 +56,7 @@
             this.picKpiItems = new System.Windows.Forms.PictureBox();
             this.panMain = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartMonthlySales = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panKpis.SuspendLayout();
             this.tblKpi.SuspendLayout();
             this.panKpiProfit.SuspendLayout();
@@ -65,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picKpiItems)).BeginInit();
             this.panMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlySales)).BeginInit();
             this.SuspendLayout();
             // 
             // panKpis
@@ -312,6 +317,7 @@
             // panMain
             // 
             this.panMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
+            this.panMain.Controls.Add(this.chartMonthlySales);
             this.panMain.Controls.Add(this.chart1);
             this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panMain.Location = new System.Drawing.Point(0, 193);
@@ -334,9 +340,30 @@
             series2.Legend = "Legend1";
             series2.Name = "sales";
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(584, 512);
+            this.chart1.Size = new System.Drawing.Size(660, 512);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            // 
+            // chartMonthlySales
+            // 
+            this.chartMonthlySales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.chartMonthlySales.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartMonthlySales.Legends.Add(legend1);
+            this.chartMonthlySales.Location = new System.Drawing.Point(694, 6);
+            this.chartMonthlySales.Name = "chartMonthlySales";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "MonthlySales";
+            series1.XValueMember = "month";
+            series1.YValueMembers = "monthly_sales";
+            this.chartMonthlySales.Series.Add(series1);
+            this.chartMonthlySales.Size = new System.Drawing.Size(655, 512);
+            this.chartMonthlySales.TabIndex = 1;
+            this.chartMonthlySales.Text = "chart2";
             // 
             // MainPage
             // 
@@ -368,6 +395,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picKpiItems)).EndInit();
             this.panMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlySales)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,5 +423,6 @@
         private System.Windows.Forms.Label lblKpiItems;
         private System.Windows.Forms.Panel panMain;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartMonthlySales;
     }
 }

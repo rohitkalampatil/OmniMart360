@@ -36,7 +36,14 @@ namespace RMS
         // setup DB connection
         private void Login_Load(object sender, EventArgs e)
         { 
+
             connection = DBConnection.GetConnection();
+            /*
+             * below code will be used to make atabase and mysql installation automate 
+             * also it will not create or execute below code every time if databse and software doesnt exist
+             * or executes only once at the time of installation
+             */
+            //DatabaseInstaller.InstallDatabase();
         }
 
         //Register Link

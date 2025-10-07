@@ -78,17 +78,12 @@ namespace RMS
                 chart1.Legends[0].Docking = Docking.Bottom;
 
                 chart1.Titles.Add("Sales by Product");
-
-
-
-
-
-
-
+                LoadMonthlySalesChart();
+       
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex);
             }
             finally
             {
@@ -96,6 +91,28 @@ namespace RMS
             }
 
         }
+        private void LoadMonthlySalesChart()
+        {
+            string query = "SELECT DATE_FORMAT(date, '%Y-%m') AS month, SUM(totalamount) AS monthly_sales FROM receipts GROUP BY month ORDER BY month;";
+            DataTable dta = new DataTable();
+
+            using (MySqlConnection conn = DBConnection.GetConnection())
+            {
+                MySqlDataAdapter daa = new MySqlDataAdapter(query, conn);
+                daa.Fill(dta);
+            }
+
+            chartMonthlySales.DataSource = dta;
+            chartMonthlySales.Series["MonthlySales"].XValueMember = "month";
+            chartMonthlySales.Series["MonthlySales"].YValueMembers = "monthly_sales";
+            chartMonthlySales.Titles.Clear();
+            chartMonthlySales.Titles.Add("Monthly Sales Trend");
+            chartMonthlySales.Legends[0].Enabled = true;
+            chartMonthlySales.Legends[0].Docking = Docking.Bottom;
+            chartMonthlySales.Series["MonthlySales"].IsValueShownAsLabel = true;
+            chartMonthlySales.Series["MonthlySales"].BorderWidth = 2;
+        }
+
 
         private void supportToolStripMenuItem_Click(object sender, EventArgs e)
         {

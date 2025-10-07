@@ -103,6 +103,7 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseInstaller.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="Help.cs">
       <SubType>Form</SubType>

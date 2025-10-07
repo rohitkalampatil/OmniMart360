@@ -35,30 +35,82 @@ namespace RMS
 
         }
        
+        //private void dataItems_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.ColumnIndex >=1 && e.ColumnIndex <= 3)
+        //    {
+
+        //        decimal rate, quantity, selling;
+        //        if (dataItems[1, e.RowIndex].Value != null &&
+        //              dataItems[3, e.RowIndex].Value != null &&
+        //              dataItems[2, e.RowIndex].Value != null &&
+        //              decimal.TryParse(dataItems[1, e.RowIndex].Value.ToString(), out rate) &&
+        //              decimal.TryParse(dataItems[3, e.RowIndex].Value.ToString(), out quantity) &&
+        //              decimal.TryParse(dataItems[2, e.RowIndex].Value.ToString(), out selling))
+
+        //        {
+        //            rate = Convert.ToDecimal(dataItems.Rows[e.RowIndex].Cells["Rate"].Value);
+        //            quantity = Convert.ToInt32(dataItems.Rows[e.RowIndex].Cells["Quantity"].Value);
+        //            decimal amount = rate * quantity;
+        //            updateT(amount);
+        //            // Update the amount cell with the calculated value
+        //            dataItems.Rows[e.RowIndex].Cells["Amount"].Value = amount;
+        //        }
+
+
+        //    }
+        //}
         private void dataItems_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex >=1 && e.ColumnIndex <= 3)
+            if (e.ColumnIndex >= 1 && e.ColumnIndex <= 3)
             {
+                string productName = string.IsNullOrWhiteSpace(dataItems.Rows[e.RowIndex].Cells["Items"].Value.ToString()) ? "" : dataItems.Rows[e.RowIndex].Cells["Items"].Value.ToString();
+
+                if (!string.IsNullOrEmpty(productName))
+                {
+                    if (IsProductNameExists(productName))
+                    {
+                        // Auto-rename by appending "-1" to avoid conflicts
+                        dataItems.Rows[e.RowIndex].Cells["Items"].Value = productName + "-1";
+
+                        MessageBox.Show("This product name already exists in inventory. It has been renamed to avoid conflicts.", "Duplicate Product Name", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
 
                 decimal rate, quantity, selling;
                 if (dataItems[1, e.RowIndex].Value != null &&
-      dataItems[3, e.RowIndex].Value != null &&
-      dataItems[2, e.RowIndex].Value != null &&
-      decimal.TryParse(dataItems[1, e.RowIndex].Value.ToString(), out rate) &&
-      decimal.TryParse(dataItems[3, e.RowIndex].Value.ToString(), out quantity) &&
-      decimal.TryParse(dataItems[2, e.RowIndex].Value.ToString(), out selling))
-
+                    dataItems[3, e.RowIndex].Value != null &&
+                    dataItems[2, e.RowIndex].Value != null &&
+                    decimal.TryParse(dataItems[1, e.RowIndex].Value.ToString(), out rate) &&
+                    decimal.TryParse(dataItems[3, e.RowIndex].Value.ToString(), out quantity) &&
+                    decimal.TryParse(dataItems[2, e.RowIndex].Value.ToString(), out selling))
                 {
                     rate = Convert.ToDecimal(dataItems.Rows[e.RowIndex].Cells["Rate"].Value);
                     quantity = Convert.ToInt32(dataItems.Rows[e.RowIndex].Cells["Quantity"].Value);
                     decimal amount = rate * quantity;
                     updateT(amount);
-                    // Update the amount cell with the calculated value
                     dataItems.Rows[e.RowIndex].Cells["Amount"].Value = amount;
                 }
-
-
             }
+        }
+
+
+        private bool IsProductNameExists(string productName)
+        {
+            bool exists = false;
+            
+            using (MySqlConnection conn = DBConnection.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM inventory WHERE name = @name";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", productName);
+                    exists = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+            return exists;
         }
 
         private void dataItems_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -297,9 +349,6 @@ namespace RMS
             PurchaseReport obj = new PurchaseReport();
             obj.ShowDialog();
         }
-        
-
-
 
 
     }
