@@ -28,6 +28,11 @@ namespace RMS
 
         private void Receivable_Load(object sender, EventArgs e)
         {
+
+            LoadData();
+        }
+        private void LoadData()
+        {
             txtSearch.Focus();
             c1.Open();
             try
@@ -49,7 +54,6 @@ namespace RMS
                 if (c1.State == ConnectionState.Open)
                     c1.Close();
             }
-
         }
         /*
          * Fetch and populate customer details
@@ -185,6 +189,11 @@ namespace RMS
                     MessageBox.Show("Error during search: " + ex.Message);
                 }
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

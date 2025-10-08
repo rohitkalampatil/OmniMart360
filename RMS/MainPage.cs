@@ -59,14 +59,20 @@ namespace RMS
                 string queryReceivable = "select sum(remaining) from receivable;";
                 MySqlCommand cmdReceivable = new MySqlCommand(queryReceivable, c1);
                 object resultReceivable = cmdReceivable.ExecuteScalar();
-                decimal receivable = resultProfit != DBNull.Value ? Convert.ToDecimal(resultReceivable) : 0;
+                decimal receivable = 0;
+
+                if (resultProfit != null && resultProfit != DBNull.Value &&
+                    resultReceivable != null && resultReceivable != DBNull.Value)
+                {
+                    receivable = Convert.ToDecimal(resultReceivable);
+                }
                 kpiIReceivable.Text = FormatIndianCurrency(receivable);
                 
 
                 /*
                  * Add Chart Here or create function
                  */
-                string queryChart = "select itemname,sum(sellingrate) as sales from solditems group by itemname;"; 
+                string queryChart = "select itemname,sum(sellingrate*quantity) as sales from solditems group by itemname;"; 
                 DataTable dt = new DataTable(); 
                 MySqlDataAdapter da = new MySqlDataAdapter(queryChart, c1); 
                 da.Fill(dt); 

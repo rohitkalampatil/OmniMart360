@@ -86,7 +86,7 @@ namespace RMS
         {
             using (OpenFileDialog openDlg = new OpenFileDialog())
             {
-                openDlg.Filter = "SQL Files (*.sql)|*.sql|All Files (*.*)|*.*";
+                openDlg.Filter = "Backup Files (*.bak)|*.bak|All Files (*.*)|*.*";
                 openDlg.Title = "Select backup file to restore";
                 if (openDlg.ShowDialog() == DialogResult.OK)
                 {
@@ -95,6 +95,7 @@ namespace RMS
                 }
             }
         }
+
 
         private void btnBackup_Click(object sender, EventArgs e)
         {
@@ -105,26 +106,61 @@ namespace RMS
             }
 
             string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-            string backupFile = Path.Combine(backupFolderPath, "storemanagementsystem_backup_" + timestamp + ".sql");
+            string sqlFile = Path.Combine(backupFolderPath, string.Format("storemanagementsystem_{0}.sql", timestamp));
+            string zipFileTemp = Path.Combine(backupFolderPath, string.Format("storemanagementsystem_backup_{0}.zip", timestamp));
+            string zipFileFinal = Path.Combine(backupFolderPath, string.Format("storemanagementsystem_backup_{0}.bak", timestamp));
 
-            string cmd = "mysqldump -u root -proot storemanagementsystem > \"" + backupFile + "\"";
-
+            string dumpCmd = string.Format("mysqldump -u root -proot storemanagementsystem > \"{0}\"", sqlFile);
+            string zipCmd = string.Format("powershell Compress-Archive -Path \"{0}\" -DestinationPath \"{1}\"", sqlFile, zipFileTemp);
 
             try
             {
-                ProcessStartInfo psi = new ProcessStartInfo("cmd.exe", "/c " + cmd);
-                psi.UseShellExecute = false;
-                psi.CreateNoWindow = true;
-                Process process = Process.Start(psi);
-                process.WaitForExit();
+                // Step 1: Run mysqldump
+                ProcessStartInfo dumpPsi = new ProcessStartInfo("cmd.exe", "/c " + dumpCmd);
+                dumpPsi.UseShellExecute = false;
+                dumpPsi.CreateNoWindow = true;
 
-                MessageBox.Show("Backup completed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                using (Process dumpProcess = Process.Start(dumpPsi))
+                {
+                    dumpProcess.WaitForExit();
+                }
+
+                // Step 2: Zip the .sql file
+                ProcessStartInfo zipPsi = new ProcessStartInfo("cmd.exe", "/c " + zipCmd);
+                zipPsi.UseShellExecute = false;
+                zipPsi.CreateNoWindow = true;
+
+                using (Process zipProcess = Process.Start(zipPsi))
+                {
+                    zipProcess.WaitForExit();
+                }
+
+                // Step 3: Rename .zip to .bak
+                if (File.Exists(zipFileTemp))
+                {
+                    File.Move(zipFileTemp, zipFileFinal);
+                }
+                else
+                {
+                    MessageBox.Show("Zip file was not created. Please check PowerShell availability.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Step 4: Delete the original .sql file
+                if (File.Exists(sqlFile))
+                {
+                    File.Delete(sqlFile);
+                }
+
+                MessageBox.Show("Backup created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Backup failed: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
@@ -134,16 +170,47 @@ namespace RMS
                 return;
             }
 
-            string cmd = "mysql -u root -p root storemanagementsystem < \"" + restoreFilePath + "\"";
-
+            // Create a temporary folder to extract the .sql file
+            string tempFolder = Path.Combine(Path.GetTempPath(), "DBRestore_" + Guid.NewGuid().ToString());
+            Directory.CreateDirectory(tempFolder);
 
             try
             {
-                ProcessStartInfo psi = new ProcessStartInfo("cmd.exe", "/c " + cmd);
-                psi.UseShellExecute = false;
-                psi.CreateNoWindow = true;
-                Process process = Process.Start(psi);
-                process.WaitForExit();
+                // Step 1: Copy .bak to .zip temporarily
+                string tempZipFile = Path.Combine(tempFolder, "temp_restore.zip");
+                File.Copy(restoreFilePath, tempZipFile, true);
+
+                // Step 2: Unzip the .zip file (originally .bak)
+                string unzipCmd = string.Format("powershell Expand-Archive -Path \"{0}\" -DestinationPath \"{1}\"", tempZipFile, tempFolder);
+                ProcessStartInfo unzipPsi = new ProcessStartInfo("cmd.exe", "/c " + unzipCmd);
+                unzipPsi.UseShellExecute = false;
+                unzipPsi.CreateNoWindow = true;
+
+                using (Process unzipProcess = Process.Start(unzipPsi))
+                {
+                    unzipProcess.WaitForExit();
+                }
+
+                // Step 3: Find the .sql file inside the extracted folder
+                string[] sqlFiles = Directory.GetFiles(tempFolder, "*.sql");
+                if (sqlFiles.Length == 0)
+                {
+                    MessageBox.Show("No .sql file found in the backup archive.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string sqlFile = sqlFiles[0];
+
+                // Step 4: Restore the .sql file using MySQL
+                string restoreCmd = string.Format("mysql -u root -proot storemanagementsystem < \"{0}\"", sqlFile);
+                ProcessStartInfo restorePsi = new ProcessStartInfo("cmd.exe", "/c " + restoreCmd);
+                restorePsi.UseShellExecute = false;
+                restorePsi.CreateNoWindow = true;
+
+                using (Process restoreProcess = Process.Start(restorePsi))
+                {
+                    restoreProcess.WaitForExit();
+                }
 
                 MessageBox.Show("Restore completed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -151,7 +218,25 @@ namespace RMS
             {
                 MessageBox.Show("Restore failed: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                // Clean up temporary folder
+                if (Directory.Exists(tempFolder))
+                {
+                    try
+                    {
+                        Directory.Delete(tempFolder, true);
+                    }
+                    catch
+                    {
+                        // Ignore cleanup errors
+                    }
+                }
+            }
         }
+
+
+
 
         
     }
