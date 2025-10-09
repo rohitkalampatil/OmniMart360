@@ -98,15 +98,7 @@ namespace RMS
             RecalculateTotalAmount();
         }
 
-       /*
-        * this methos is no longer in use
-        * 
-        * private void updateT(decimal a)
-        {
-            tamount += a;
-            textTotalBill.Text = string.Format(new System.Globalization.CultureInfo("en-IN"), "{0:N}", tamount);
-        }
-        */
+
         private void RecalculateTotalAmount()
         {
             tamount = 0;
