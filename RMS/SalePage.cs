@@ -32,17 +32,18 @@ namespace RMS
             labalCurrentDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
             textTotalAmount.Text = tamount.ToString();
-            txtRate.Text = "0.00";
-            txtPaidAmount.Text = "0.00";
-            txtRemainingAmount.Text = "0.00";
-            txtAmt.Text = "0.00";
+            txtRate.Text = "0";
+            txtPaidAmount.Text = "0";
+            txtRemainingAmount.Text = "0";
+            txtAmt.Text = "0";
             textDiscount.Text = "0";
-            textAmount.Text = "0.00";
+            textAmount.Text = "0";
             lblItems.Text = "0";
             numericUpDown1.Value = 1;
             cmbItems.Focus();
             LoadNewInvoice();
             populateItem();
+            btnSave.Visible = false;
         }
         //function to get Items from db and populate to combobox
         private void populateItem()
@@ -85,7 +86,7 @@ namespace RMS
                 cmd = new MySqlCommand(query, connection);
                 int invoiceno = Convert.ToInt32(cmd.ExecuteScalar());
 
-                labelInvoiceNo.Text = (invoiceno + 1).ToString();         
+                labelInvoiceNo.Text = (invoiceno + 1).ToString();
             }
             catch (Exception ex)
             {
@@ -98,8 +99,6 @@ namespace RMS
                     connection.Close();
             }
         }
-
-        
         
  
         private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -110,26 +109,29 @@ namespace RMS
         private void updateT(decimal a)
         {
             tamount += a;
-            textTotalAmount.Text = tamount.ToString("0.00");
-            textAmount.Text = tamount.ToString("0.00");    
+            textTotalAmount.Text = tamount.ToString("0");
+            textAmount.Text = tamount.ToString("0");    
         }
 
         private void RecalculateTotalAmount()
         {
-            // Recalculate total amount when a row is deleted or updated
+            // Recalculate total amount and total items
             tamount = 0;
-            int itemCount = 0;
+            int totalItems = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                itemCount++;
                 if (!row.IsNewRow)
                 {
                     // Calculate the amount for each row and add to the total
                     decimal amount = Convert.ToDecimal(row.Cells["Amount"].Value);
                     tamount += amount;
+
+                    // Sum the quantity for total items
+                    int qty = Convert.ToInt32(row.Cells[2].Value);
+                    totalItems += qty;
                 }
             }
-            lblItems.Text = itemCount.ToString();
+            lblItems.Text = totalItems.ToString(); // Show total items instead of rows
             textTotalAmount.Text = tamount.ToString();
             textAmount.Text = tamount.ToString();
             txtRemainingAmount.Text = tamount.ToString();
@@ -326,73 +328,150 @@ namespace RMS
 
         private void btnAddCart_Click(object sender, EventArgs e)
         {
-            // ADD items to datagride and clear form and focus to select anather item
             if (cmbItems.SelectedIndex == -1)
             {
                 MessageBox.Show("Please Select Items..", "OmniMart360", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 cmbItems.Focus();
+                return;
+            }
+
+            string itemName = cmbItems.SelectedItem.ToString();
+            decimal rate, amount;
+            int quantity = (int)numericUpDown1.Value;
+
+            // Get available inventory for the item
+            int availableQty = GetAvailableInventory(itemName);
+
+            // Check if item already exists in cart
+            int existingRowIndex = -1;
+            int cartQty = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow && row.Cells[0].Value.ToString() == itemName)
+                {
+                    existingRowIndex = row.Index;
+                    cartQty = Convert.ToInt32(row.Cells[2].Value);
+                    break;
+                }
+            }
+
+            int totalRequestedQty = cartQty + quantity;
+            if (totalRequestedQty > availableQty)
+            {
+                MessageBox.Show(@"Cannot add {quantity} more '{itemName}'. Only {availableQty - cartQty} left in stock.", "OmniMart360", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!decimal.TryParse(txtRate.Text, out rate))
+            {
+                MessageBox.Show("Please enter valid rate.", "Omnimart360 ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            amount = rate * totalRequestedQty;
+
+            if (existingRowIndex >= 0)
+            {
+                // Update existing row
+                dataGridView1.Rows[existingRowIndex].Cells[2].Value = totalRequestedQty;
+                dataGridView1.Rows[existingRowIndex].Cells[3].Value = amount.ToString("0");
             }
             else
             {
+                // Add new row
+                dataGridView1.Rows.Add(itemName, rate.ToString("0"), quantity, (rate * quantity).ToString("0"));
+            }
 
-                string itemName = cmbItems.SelectedItem != null ? cmbItems.SelectedItem.ToString() : "";
+            cmbItems.Focus();
+            resetCart();
+            RecalculateTotalAmount();
+        }
 
-                decimal rate, amount;
-                int quantity = (int)numericUpDown1.Value;
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            // Only handle edits to the Quantity column (index 2 or "Quantity")
+            // If you use column names, replace indexes with names below
+            if ((e.ColumnIndex == 2 || dataGridView1.Columns[e.ColumnIndex].Name == "Quantity") && !dataGridView1.Rows[e.RowIndex].IsNewRow)
+            {
 
-                // Check quantity in database
-                if (!IsQuantityAvailable(itemName, quantity))
+                string itemName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                int qty = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+
+                //MessageBox.Show("Item "+itemName+"\nQuantity "+qty);
+                decimal rate = 0;
+                int newQty = 1;
+
+                // Try to get rate and quantity using column names if available
+                if (!decimal.TryParse(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(), out rate))
                 {
-                    MessageBox.Show("Product Quantity Low In Stock", "Omnimart360 ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    rate = 0;
+                }
+                if (!int.TryParse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString(), out newQty) || newQty < 1)
+                {
+                    MessageBox.Show("Invalid quantity entered.", "OmniMart360", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dataGridView1.Rows[e.RowIndex].Cells[2].Value = 1;
+                    newQty = 1;
                 }
 
-                if (string.IsNullOrEmpty(itemName) ||
-                    !decimal.TryParse(txtRate.Text, out rate) ||
-                    !decimal.TryParse(txtAmt.Text, out amount))
+                // Get available inventory
+                int availableQty = GetAvailableInventory(itemName);
+
+                // Calculate cumulative quantity in cart (excluding current row)
+                int cartQty = 0;
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    MessageBox.Show("Please enter valid item, rate, and amount.", "Omnimart360 ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    if (i != e.RowIndex && !dataGridView1.Rows[i].IsNewRow && dataGridView1.Rows[i].Cells[0].Value.ToString() == itemName)
+                    {
+                        cartQty += Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
                 }
 
-                // Add row to DataGridView
-                dataGridView1.Rows.Add(itemName, rate.ToString("0.00"), quantity, amount.ToString("0.00"));
-                cmbItems.Focus();
-                resetCart();
-                // Recalculate totals
+                int totalRequestedQty = cartQty + newQty;
+                if (totalRequestedQty > availableQty)
+                {
+                    MessageBox.Show("Cannot set quantity to " + newQty + ". Only " + (availableQty - cartQty) + " left in stock.", "OmniMart360", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    int allowedQty = availableQty - cartQty;
+                    dataGridView1.Rows[e.RowIndex].Cells[2].Value = allowedQty > 0 ? allowedQty : 1;
+                    newQty = allowedQty > 0 ? allowedQty : 1;
+                }
+
+                // Calculate and set amount for this row
+                decimal amount = rate * newQty;
+                dataGridView1.Rows[e.RowIndex].Cells[3].Value = amount.ToString("0");
+
+                // Recalculate total
                 RecalculateTotalAmount();
             }
+            else
+            {
+                // Prevent editing other columns
+                if (!dataGridView1.Rows[e.RowIndex].IsNewRow)
+                {
+                    MessageBox.Show("Only quantity can be edited.", "OmniMart360", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
-        //check quantity available in db
-        private bool IsQuantityAvailable(string itemName, int requestedQty)
+
+        // Helper to get available inventory
+        private int GetAvailableInventory(string itemName)
         {
-            bool isAvailable = false;
+            int qty = 0;
             string query = "SELECT qty FROM inventory WHERE name = @name";
-            int availableQty;
             using (MySqlConnection conn = DBConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@name", itemName);
-
                 try
                 {
                     conn.Open();
                     object result = cmd.ExecuteScalar();
-                    if (result != null && int.TryParse(result.ToString(), out availableQty))
-                    {
-                        isAvailable = requestedQty <= availableQty;
-                    }
+                    if (result != null)
+                        int.TryParse(result.ToString(), out qty);
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error checking inventory: " + ex.Message,"OmniMart360",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                }
+                catch { }
             }
-
-            return isAvailable;
+            return qty;
         }
-
-
 
         /*
          *  Below is the logic for get data and load into combobox and set and calculate
@@ -427,20 +506,20 @@ namespace RMS
                         decimal rate = Convert.ToDecimal(result);
                         int qty = Convert.ToInt32(numericUpDown1.Value);
                         decimal amount = rate * qty;
-                        txtRate.Text = rate.ToString("0.00");
+                        txtRate.Text = rate.ToString("0");
                         //is user chandes later his selection
 
-                        txtAmt.Text = amount.ToString("0.00");
+                        txtAmt.Text = amount.ToString("0");
                         numericUpDown1.Value = 1;
                     }
                     else
                     {
-                        txtRate.Text = "0.00"; // Default if item not found
+                        txtRate.Text = "0"; // Default if item not found
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error Fetching Rate: " + ex.Message, "OmniMart360", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error Fetching Rate: " + ex.Message, "Omnimart360", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -461,7 +540,7 @@ namespace RMS
                 // Calculate the amount
                 decimal amount = itemRate * quantity;
                 // Update the amount cell with the calculated value
-                txtAmt.Text = amount.ToString("0.00");
+                txtAmt.Text = amount.ToString("0");
 
             }
         }
@@ -473,9 +552,9 @@ namespace RMS
         private void resetCart()
         {
             cmbItems.SelectedIndex = -1;
-            txtAmt.Text = "0.00";
-            txtRate.Text = "0.00";
-            numericUpDown1.Value = 0;
+            txtAmt.Text = "0";
+            txtRate.Text = "0";
+            numericUpDown1.Value = 1;
         }
         //Clear Button ---- may not need
         private void btnClear_Click(object sender, EventArgs e)
@@ -485,17 +564,18 @@ namespace RMS
         private void ClearAll()
         {
             cmbItems.SelectedIndex = -1;
-            txtAmt.Text = "0.00";
-            txtRate.Text = "0.00";
+            txtAmt.Text = "0";
+            txtRate.Text = "0";
             numericUpDown1.Value = 0;
             textCustomerName.Text = "";
             textCutomerMobile.Text = "";
             dataGridView1.Rows.Clear();
-            textDiscount.Text = "0.00";
-            textAmount.Text = "0.00";
-            textTotalAmount.Text = "0.00";
-            txtPaidAmount.Text = "0.00";
-            txtRemainingAmount.Text = "0.00";
+            textDiscount.Text = "0";
+            textAmount.Text = "0";
+            textTotalAmount.Text = "0";
+            txtPaidAmount.Text = "0";
+            txtRemainingAmount.Text = "0";
+            btnSave.Visible = false;
         }
 
         private void btnReceivable_Click(object sender, EventArgs e)
@@ -602,22 +682,12 @@ namespace RMS
 
                                 if (receivableInserted > 0)
                                 {
-                                    DialogResult res = MessageBox.Show(
-                                        "Receivable created successfully.\nDo you want to save the receipt?",
-                                        "OmniMart360",
-                                        MessageBoxButtons.YesNo,
-                                        MessageBoxIcon.Question
-                                    );
-
-                                    if (res == DialogResult.Yes)
-                                    {
+                                   
                                         connection.Close();
                                         saveReceipt(); // Call your receipt-saving method
-                                    }
-                                    else
-                                    {
+                           
                                         btnReceivable.Visible = false; // Hide the button if user says No
-                                    }
+                                  
                                 }
 
                             }
@@ -648,28 +718,50 @@ namespace RMS
 
         private void txtPaidAmount_TextChanged(object sender, EventArgs e)
         {
+            // Only keep digits
+            string rawInput = Regex.Replace(txtPaidAmount.Text, "[^0-9]", "");
+
+            // Temporarily remove handler to prevent infinite loop on update
+            txtPaidAmount.TextChanged -= txtPaidAmount_TextChanged;
+
+            btnSave.Visible = true;
             decimal remAmt = 0;
+
             try
             {
                 decimal paidAmt = 0;
-                if (string.IsNullOrWhiteSpace(txtPaidAmount.Text) || txtPaidAmount.Text == "0.00")
-                    paidAmt = 0;
-                else
-                    paidAmt = Convert.ToDecimal(txtPaidAmount.Text);
-
-                decimal amt = Convert.ToDecimal(textAmount.Text);
-
-                if (paidAmt > amt)
+                if (string.IsNullOrWhiteSpace(rawInput) || rawInput == "0")
                 {
                     paidAmt = 0;
                     txtPaidAmount.Text = "";
-                    txtRemainingAmount.Text = textAmount.Text;
+                }
+                else
+                {
+                    paidAmt = Convert.ToDecimal(rawInput);
                 }
 
-                remAmt = amt - paidAmt;
-                txtRemainingAmount.Text = remAmt.ToString("0.00");
+                decimal totalAmt = 0;
+                if (!decimal.TryParse(textAmount.Text.Replace(",", ""), out totalAmt))
+                    totalAmt = 0;
 
-                // Show/hide buttons based on remaining amount
+                if (paidAmt > totalAmt)
+                {
+                    MessageBox.Show("Paid amount cannot exceed total amount.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    paidAmt = 0;
+                    txtPaidAmount.Text = "";
+                    txtRemainingAmount.Text = totalAmt.ToString("0");
+                }
+                else
+                {
+                    // Format as Indian currency (optional)
+                    txtPaidAmount.Text = string.Format(new System.Globalization.CultureInfo("en-IN"), "{0:N0}", paidAmt);
+                    txtPaidAmount.SelectionStart = txtPaidAmount.Text.Length;
+
+                    remAmt = totalAmt - paidAmt;
+                    txtRemainingAmount.Text = remAmt.ToString("0");
+                }
+
+                // Toggle buttons
                 if (remAmt > 0)
                 {
                     btnReceivable.Visible = true;
@@ -681,14 +773,21 @@ namespace RMS
                     btnSave.Visible = true;
                 }
             }
-            catch (Exception ex)
+            catch
             {
+                txtPaidAmount.Text = "";
                 txtRemainingAmount.Text = textAmount.Text;
                 btnReceivable.Visible = false;
                 btnSave.Visible = true;
             }
-
+            finally
+            {
+                // Reattach handler
+                txtPaidAmount.TextChanged += txtPaidAmount_TextChanged;
+            }
         }
+
+
 
 
 

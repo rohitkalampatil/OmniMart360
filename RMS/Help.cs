@@ -19,7 +19,7 @@ namespace RMS
 
         private void Help_Load(object sender, EventArgs e)
         {
-            string helpFilePath = Path.Combine(Application.StartupPath, @"..\..\Resources\help.html");
+            string helpFilePath = Path.Combine(Application.StartupPath, @"..\..\help.html");
             helpFilePath = Path.GetFullPath(helpFilePath);
 
             if (File.Exists(helpFilePath))

@@ -9,7 +9,7 @@
               <xs:element name="Items" type="xs:string" minOccurs="0" />
               <xs:element name="Rate" type="xs:decimal" minOccurs="0" />
               <xs:element name="Quantity" type="xs:int" minOccurs="0" />
-              <xs:element name="Amount" msdata:ReadOnly="true" msdata:Expression="Quantity*Rate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Amount" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

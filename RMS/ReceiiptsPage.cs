@@ -26,6 +26,7 @@ namespace RMS
             
             c1 = DBConnection.GetConnection();;
             refreshFunction();
+
         }
         private void refreshFunction()
         {
@@ -38,6 +39,7 @@ namespace RMS
 
                 da.Fill(t);
                 PopulateDataGridView(t);
+                PopulateYearMonthFilters();
 
             }
             catch (Exception ex)
@@ -50,6 +52,28 @@ namespace RMS
                 if (c1.State == ConnectionState.Open)
                     c1.Close();
             }
+        }
+        private void PopulateYearMonthFilters()
+        {
+            // Populate years from the data
+            var years = t.AsEnumerable()
+                         .Select(row => Convert.ToDateTime(row["date"]).Year)
+                         .Distinct()
+                         .OrderByDescending(y => y)
+                         .ToList();
+
+            combYear.Items.Clear();
+            combYear.Items.Add("All");
+            foreach (var year in years)
+                combYear.Items.Add(year.ToString());
+            combYear.SelectedIndex = 0;
+
+            // Populate months
+            combMonth.Items.Clear();
+            combMonth.Items.Add("All");
+            for (int i = 1; i <= 12; i++)
+                combMonth.Items.Add(new DateTime(2000, i, 1).ToString("MMMM"));
+            combMonth.SelectedIndex = 0;
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -83,11 +107,6 @@ namespace RMS
         }
 
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            refreshFunction();
-        }
-
         private void PopulateDataGridView(DataTable table)
         {
             dataGridView1.Rows.Clear();
@@ -102,6 +121,41 @@ namespace RMS
                 dataGridView1.Rows[rowIndex].Cells["invno"].Value = row["invoiceno"];
 
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            refreshFunction();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FilterByYearMonth();
+        }
+
+        private void FilterByYearMonth()
+        {
+            string selectedYear = combYear.SelectedItem.ToString();
+            string selectedMonth = combMonth.SelectedItem.ToString();
+
+            int year = selectedYear != "All" ? Convert.ToInt32(selectedYear) : -1;
+            int month = selectedMonth != "All" ? DateTime.ParseExact(selectedMonth, "MMMM", null).Month : -1;
+
+            DataTable filteredTable = t.Clone(); // Clone structure
+
+            foreach (DataRow row in t.Rows)
+            {
+                DateTime date = Convert.ToDateTime(row["date"]);
+                bool matchYear = (year == -1 || date.Year == year);
+                bool matchMonth = (month == -1 || date.Month == month);
+
+                if (matchYear && matchMonth)
+                {
+                    filteredTable.ImportRow(row);
+                }
+            }
+
+            PopulateDataGridView(filteredTable);
         }
     }
 }

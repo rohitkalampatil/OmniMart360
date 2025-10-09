@@ -72,7 +72,12 @@ namespace RMS
                 /*
                  * Add Chart Here or create function
                  */
-                string queryChart = "select itemname,sum(sellingrate*quantity) as sales from solditems group by itemname;"; 
+                string queryChart = @"SELECT itemname, SUM(sellingrate * quantity) AS sales
+                                            FROM solditems
+                                            GROUP BY itemname
+                                            ORDER BY sales DESC
+                                            LIMIT 9;
+                                            ;"; 
                 DataTable dt = new DataTable(); 
                 MySqlDataAdapter da = new MySqlDataAdapter(queryChart, c1); 
                 da.Fill(dt); 

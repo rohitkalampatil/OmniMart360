@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace RMS
 {
@@ -15,7 +16,7 @@ namespace RMS
     {
 
         private decimal tamount = 0;
-        String cs = "";
+        
         MySqlConnection c1;
         MySqlCommand cmd;
 
@@ -27,56 +28,31 @@ namespace RMS
         private void PurchasePage_Load(object sender, EventArgs e)
         {
             textInvoiceNo.Focus();
-
             c1 = DBConnection.GetConnection(); ;
-            // connected to  database
             comboBox1.SelectedIndex = 0; 
-            textTotalBill.Text = tamount.ToString();
-
+            textTotalBill.Text = string.Format(new System.Globalization.CultureInfo("en-IN"), "{0:N}", tamount);
         }
-       
-        //private void dataItems_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (e.ColumnIndex >=1 && e.ColumnIndex <= 3)
-        //    {
 
-        //        decimal rate, quantity, selling;
-        //        if (dataItems[1, e.RowIndex].Value != null &&
-        //              dataItems[3, e.RowIndex].Value != null &&
-        //              dataItems[2, e.RowIndex].Value != null &&
-        //              decimal.TryParse(dataItems[1, e.RowIndex].Value.ToString(), out rate) &&
-        //              decimal.TryParse(dataItems[3, e.RowIndex].Value.ToString(), out quantity) &&
-        //              decimal.TryParse(dataItems[2, e.RowIndex].Value.ToString(), out selling))
-
-        //        {
-        //            rate = Convert.ToDecimal(dataItems.Rows[e.RowIndex].Cells["Rate"].Value);
-        //            quantity = Convert.ToInt32(dataItems.Rows[e.RowIndex].Cells["Quantity"].Value);
-        //            decimal amount = rate * quantity;
-        //            updateT(amount);
-        //            // Update the amount cell with the calculated value
-        //            dataItems.Rows[e.RowIndex].Cells["Amount"].Value = amount;
-        //        }
-
-
-        //    }
-        //}
         private void dataItems_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex >= 1 && e.ColumnIndex <= 3)
             {
-                string productName = string.IsNullOrWhiteSpace(dataItems.Rows[e.RowIndex].Cells["Items"].Value.ToString()) ? "" : dataItems.Rows[e.RowIndex].Cells["Items"].Value.ToString();
+                string productName = " ";
+                object cellValue = dataItems.Rows[e.RowIndex].Cells["Items"].Value;
+
+                if (cellValue != null && !string.IsNullOrWhiteSpace(cellValue.ToString()))
+                {
+                    productName = cellValue.ToString();
+                }
 
                 if (!string.IsNullOrEmpty(productName))
                 {
                     if (IsProductNameExists(productName))
                     {
-                        // Auto-rename by appending "-1" to avoid conflicts
                         dataItems.Rows[e.RowIndex].Cells["Items"].Value = productName + "-1";
-
                         MessageBox.Show("This product name already exists in inventory. It has been renamed to avoid conflicts.", "Duplicate Product Name", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-
 
                 decimal rate, quantity, selling;
                 if (dataItems[1, e.RowIndex].Value != null &&
@@ -87,10 +63,13 @@ namespace RMS
                     decimal.TryParse(dataItems[2, e.RowIndex].Value.ToString(), out selling))
                 {
                     rate = Convert.ToDecimal(dataItems.Rows[e.RowIndex].Cells["Rate"].Value);
-                    quantity = Convert.ToInt32(dataItems.Rows[e.RowIndex].Cells["Quantity"].Value);
+                    quantity = Convert.ToDecimal(dataItems.Rows[e.RowIndex].Cells["Quantity"].Value);
+
                     decimal amount = rate * quantity;
-                    updateT(amount);
                     dataItems.Rows[e.RowIndex].Cells["Amount"].Value = amount;
+
+                    // ✅ Recalculate total bill after every edit
+                    RecalculateTotalAmount();
                 }
             }
         }
@@ -119,44 +98,39 @@ namespace RMS
             RecalculateTotalAmount();
         }
 
-        private void updateT(decimal a)
+       /*
+        * this methos is no longer in use
+        * 
+        * private void updateT(decimal a)
         {
             tamount += a;
-            textTotalBill.Text = tamount.ToString();
+            textTotalBill.Text = string.Format(new System.Globalization.CultureInfo("en-IN"), "{0:N}", tamount);
         }
-
+        */
         private void RecalculateTotalAmount()
         {
-            // Recalculate total amount when a row is deleted or updated
             tamount = 0;
+
             foreach (DataGridViewRow row in dataItems.Rows)
             {
                 if (!row.IsNewRow)
                 {
-                    // Calculate the amount for each row and add to the total
-                    decimal amount = Convert.ToDecimal(row.Cells["Amount"].Value);
-                    tamount += amount;
+                    object cellVal = row.Cells["Amount"].Value;
+                    decimal amount;
+
+                    if (cellVal != null && decimal.TryParse(cellVal.ToString(), out amount))
+                    {
+                        tamount += amount;
+                    }
                 }
             }
-            textTotalBill.Text = tamount.ToString();
+
+            CultureInfo culture = new CultureInfo("en-IN");
+            textTotalBill.Text = string.Format(culture, "{0:N}", tamount);
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            ClearAll();
-        }
-        private void ClearAll()
-        {
-            textInvoiceNo.Text = "";
-            textSupplierAddress.Text = "";
-            textSupplierContact.Text = "";
-            textSupplierEmail.Text = "";
-            textSupplierName.Text = "";
-            textPaidAmount.Text = "";
-            dataItems.Rows.Clear();
-            tamount = 0;
-            textTotalBill.Text = tamount.ToString();
-        }
+        
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (textInvoiceNo.Text == "") 
@@ -339,17 +313,72 @@ namespace RMS
 
         private void textPaidAmount_TextChanged(object sender, EventArgs e)
         {
-            textPaidAmount.Text= Regex.Replace(textPaidAmount.Text, "[^0-9]", "");
+            try
+            {
+                // Remove non-digit characters
+                string raw = Regex.Replace(textPaidAmount.Text, "[^0-9]", "");
+
+                if (string.IsNullOrEmpty(raw))
+                {
+                    textPaidAmount.Text = "";
+                    return;
+                }
+
+                // Parse paid amount
+                double paidAmount;
+                if (!double.TryParse(raw, out paidAmount))
+                {
+                    textPaidAmount.Text = "";
+                    return;
+                }
+
+                // Parse total bill from textTotalBill
+                double totalBill;
+                if (!double.TryParse(textTotalBill.Text.Replace(",", ""), out totalBill))
+                {
+                    totalBill = 0;
+                }
+
+                // Restrict paid amount to not exceed total bill
+                if (paidAmount > totalBill)
+                {
+                    MessageBox.Show("Paid amount cannot exceed total bill.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    paidAmount = totalBill;
+                }
+
+                // Format and update textbox
+                textPaidAmount.Text = string.Format(new System.Globalization.CultureInfo("en-IN"), "{0:N0}", paidAmount);
+                textPaidAmount.SelectionStart = textPaidAmount.Text.Length;
+            }
+            catch
+            {
+                textPaidAmount.Text = "";
+            }
         }
 
+
         private void purchaseReport_Click(object sender, EventArgs e)
-        {
-            
-            
+        {   
             PurchaseReport obj = new PurchaseReport();
             obj.ShowDialog();
         }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearAll();
+        }
 
+        private void ClearAll()
+        {
+            textInvoiceNo.Text = "";
+            textSupplierAddress.Text = "";
+            textSupplierContact.Text = "";
+            textSupplierEmail.Text = "";
+            textSupplierName.Text = "";
+            textPaidAmount.Text = "";
+            dataItems.Rows.Clear();
+            tamount = 0;
+            textTotalBill.Text = string.Format(new System.Globalization.CultureInfo("en-IN"), "{0:N}", tamount);
+        }
 
     }
 }

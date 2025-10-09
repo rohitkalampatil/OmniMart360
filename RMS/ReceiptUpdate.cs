@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Drawing.Printing;
+
 namespace RMS
 {
     public partial class ReceiptUpdate : Form
@@ -88,7 +90,7 @@ namespace RMS
                     textBill.Text= reader["bill"].ToString();
                     
                     // discount on old total bill
-                    textDiscount.Text = reader["discount"].ToString(); 
+                    textDiscount.Text = reader["discount"].ToString()+"%"; 
                     
                     //old total amount
                     textTotal.Text = reader["totalamount"].ToString();
@@ -317,6 +319,7 @@ namespace RMS
                 }
                 
                 MessageBox.Show("Receipt Updated Successfully...", "OmniMart360", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 txtPaidAmt.Text = "0";
                 c1.Close();
                 showDataItems();
@@ -341,8 +344,48 @@ namespace RMS
          */
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            printReceipt();
         }
+
+        private void printReceipt()
+        {
+            // Gather data from the form
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Items", typeof(string));
+            dt.Columns.Add("Rate", typeof(decimal));
+            dt.Columns.Add("Quantity", typeof(int));
+            dt.Columns.Add("Amount", typeof(decimal));
+
+            foreach (DataGridViewRow dgv in dataGridView1.Rows)
+            {
+                if (dgv.IsNewRow) continue;
+                string item = dgv.Cells[0].Value != null ? dgv.Cells[0].Value.ToString() : "";
+                decimal rate = dgv.Cells[1].Value != null ? Convert.ToDecimal(dgv.Cells[1].Value) : 0;
+                int qty = dgv.Cells[2].Value != null ? Convert.ToInt32(dgv.Cells[2].Value) : 0;
+                decimal amount = dgv.Cells[4].Value != null ? Convert.ToDecimal(dgv.Cells[4].Value) : 0;
+                dt.Rows.Add(item, rate, qty, amount);
+            }
+            ds.Tables.Add(dt);
+            ds.WriteXmlSchema("salesItems.xml");
+
+            // Get values from controls
+            string customerName = lblName.Text;
+            long mobile = 0;
+            long.TryParse(lblMobile.Text, out mobile);
+            decimal bill = 0;
+            decimal.TryParse(textBill.Text, out bill);
+            int disc = 0;
+            int.TryParse(textDiscount.Text, out disc);
+            decimal total = 0;
+            decimal.TryParse(textTotal.Text, out total);
+
+            SaleReceiptView sl = new SaleReceiptView(invNo, customerName, mobile, bill, disc, total, ds);
+            sl.ShowDialog();
+        }
+
+        
 
         /*
          *  Handle and Calculate remaining amount 

@@ -94,11 +94,11 @@
             // 
             this.textInvoiceNo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textInvoiceNo.BackColor = System.Drawing.Color.White;
-            this.textInvoiceNo.Location = new System.Drawing.Point(4, 31);
-            this.textInvoiceNo.Margin = new System.Windows.Forms.Padding(4);
+            this.textInvoiceNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textInvoiceNo.Location = new System.Drawing.Point(3, 25);
             this.textInvoiceNo.MaxLength = 12;
             this.textInvoiceNo.Name = "textInvoiceNo";
-            this.textInvoiceNo.Size = new System.Drawing.Size(169, 29);
+            this.textInvoiceNo.Size = new System.Drawing.Size(136, 24);
             this.textInvoiceNo.TabIndex = 1;
             this.textInvoiceNo.TextChanged += new System.EventHandler(this.textInvoiceNo_TextChanged);
             // 
@@ -106,21 +106,20 @@
             // 
             this.dateTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTime.Location = new System.Drawing.Point(287, 31);
-            this.dateTime.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTime.Location = new System.Drawing.Point(230, 25);
             this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(181, 29);
+            this.dateTime.Size = new System.Drawing.Size(146, 24);
             this.dateTime.TabIndex = 2;
             // 
             // textSupplierEmail
             // 
             this.textSupplierEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textSupplierEmail.BackColor = System.Drawing.Color.White;
-            this.textSupplierEmail.Location = new System.Drawing.Point(119, 111);
-            this.textSupplierEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.textSupplierEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textSupplierEmail.Location = new System.Drawing.Point(95, 89);
             this.textSupplierEmail.MaxLength = 80;
             this.textSupplierEmail.Name = "textSupplierEmail";
-            this.textSupplierEmail.Size = new System.Drawing.Size(335, 29);
+            this.textSupplierEmail.Size = new System.Drawing.Size(269, 24);
             this.textSupplierEmail.TabIndex = 5;
             this.textSupplierEmail.TextChanged += new System.EventHandler(this.textSupplierEmail_TextChanged);
             // 
@@ -128,11 +127,11 @@
             // 
             this.textSupplierContact.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textSupplierContact.BackColor = System.Drawing.Color.White;
-            this.textSupplierContact.Location = new System.Drawing.Point(121, 74);
-            this.textSupplierContact.Margin = new System.Windows.Forms.Padding(4);
+            this.textSupplierContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textSupplierContact.Location = new System.Drawing.Point(97, 59);
             this.textSupplierContact.MaxLength = 10;
             this.textSupplierContact.Name = "textSupplierContact";
-            this.textSupplierContact.Size = new System.Drawing.Size(333, 29);
+            this.textSupplierContact.Size = new System.Drawing.Size(267, 24);
             this.textSupplierContact.TabIndex = 4;
             this.textSupplierContact.TextChanged += new System.EventHandler(this.textSupplierContact_TextChanged);
             // 
@@ -140,12 +139,12 @@
             // 
             this.textSupplierAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textSupplierAddress.BackColor = System.Drawing.Color.White;
-            this.textSupplierAddress.Location = new System.Drawing.Point(119, 149);
-            this.textSupplierAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.textSupplierAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textSupplierAddress.Location = new System.Drawing.Point(95, 119);
             this.textSupplierAddress.MaxLength = 100;
             this.textSupplierAddress.Multiline = true;
             this.textSupplierAddress.Name = "textSupplierAddress";
-            this.textSupplierAddress.Size = new System.Drawing.Size(333, 50);
+            this.textSupplierAddress.Size = new System.Drawing.Size(267, 41);
             this.textSupplierAddress.TabIndex = 6;
             this.textSupplierAddress.TextChanged += new System.EventHandler(this.textSupplierAddress_TextChanged);
             // 
@@ -153,11 +152,11 @@
             // 
             this.textSupplierName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textSupplierName.BackColor = System.Drawing.Color.White;
-            this.textSupplierName.Location = new System.Drawing.Point(119, 37);
-            this.textSupplierName.Margin = new System.Windows.Forms.Padding(4);
+            this.textSupplierName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textSupplierName.Location = new System.Drawing.Point(95, 30);
             this.textSupplierName.MaxLength = 40;
             this.textSupplierName.Name = "textSupplierName";
-            this.textSupplierName.Size = new System.Drawing.Size(333, 29);
+            this.textSupplierName.Size = new System.Drawing.Size(267, 24);
             this.textSupplierName.TabIndex = 3;
             this.textSupplierName.TextChanged += new System.EventHandler(this.textSupplierName_TextChanged);
             // 
@@ -165,10 +164,9 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 114);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(6, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 24);
+            this.label2.Size = new System.Drawing.Size(57, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "Email  :";
             // 
@@ -176,10 +174,9 @@
             // 
             this.labelSupplierContact.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelSupplierContact.AutoSize = true;
-            this.labelSupplierContact.Location = new System.Drawing.Point(7, 77);
-            this.labelSupplierContact.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSupplierContact.Location = new System.Drawing.Point(6, 62);
             this.labelSupplierContact.Name = "labelSupplierContact";
-            this.labelSupplierContact.Size = new System.Drawing.Size(107, 24);
+            this.labelSupplierContact.Size = new System.Drawing.Size(84, 18);
             this.labelSupplierContact.TabIndex = 0;
             this.labelSupplierContact.Text = "Mobile No :";
             // 
@@ -187,10 +184,9 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 152);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(6, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 24);
+            this.label3.Size = new System.Drawing.Size(70, 18);
             this.label3.TabIndex = 0;
             this.label3.Text = "Address :";
             // 
@@ -198,10 +194,9 @@
             // 
             this.labelSupplierName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelSupplierName.AutoSize = true;
-            this.labelSupplierName.Location = new System.Drawing.Point(7, 40);
-            this.labelSupplierName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSupplierName.Location = new System.Drawing.Point(6, 32);
             this.labelSupplierName.Name = "labelSupplierName";
-            this.labelSupplierName.Size = new System.Drawing.Size(71, 24);
+            this.labelSupplierName.Size = new System.Drawing.Size(56, 18);
             this.labelSupplierName.TabIndex = 0;
             this.labelSupplierName.Text = "Name :";
             // 
@@ -209,10 +204,9 @@
             // 
             this.labelDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(418, 7);
-            this.labelDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDate.Location = new System.Drawing.Point(334, 6);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(53, 24);
+            this.labelDate.Size = new System.Drawing.Size(43, 18);
             this.labelDate.TabIndex = 0;
             this.labelDate.Text = "Date ";
             // 
@@ -220,10 +214,9 @@
             // 
             this.labelInvoice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelInvoice.AutoSize = true;
-            this.labelInvoice.Location = new System.Drawing.Point(4, 7);
-            this.labelInvoice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelInvoice.Location = new System.Drawing.Point(3, 6);
             this.labelInvoice.Name = "labelInvoice";
-            this.labelInvoice.Size = new System.Drawing.Size(149, 24);
+            this.labelInvoice.Size = new System.Drawing.Size(115, 18);
             this.labelInvoice.TabIndex = 0;
             this.labelInvoice.Text = "Invoice Number ";
             // 
@@ -235,20 +228,18 @@
             "Cash",
             "Online",
             "Cheque"});
-            this.comboBox1.Location = new System.Drawing.Point(177, 97);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(142, 78);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(268, 32);
+            this.comboBox1.Size = new System.Drawing.Size(215, 26);
             this.comboBox1.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 100);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 24);
+            this.label1.Size = new System.Drawing.Size(128, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "Payment Method :";
             // 
@@ -260,12 +251,11 @@
             this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(260, 11);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Location = new System.Drawing.Point(208, 9);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(94, 38);
+            this.btnClear.Size = new System.Drawing.Size(75, 30);
             this.btnClear.TabIndex = 11;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -274,22 +264,22 @@
             // textPaidAmount
             // 
             this.textPaidAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textPaidAmount.Location = new System.Drawing.Point(177, 54);
-            this.textPaidAmount.Margin = new System.Windows.Forms.Padding(4);
+            this.textPaidAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPaidAmount.Location = new System.Drawing.Point(142, 43);
             this.textPaidAmount.Name = "textPaidAmount";
-            this.textPaidAmount.Size = new System.Drawing.Size(268, 29);
+            this.textPaidAmount.Size = new System.Drawing.Size(215, 24);
             this.textPaidAmount.TabIndex = 8;
             this.textPaidAmount.TextChanged += new System.EventHandler(this.textPaidAmount_TextChanged);
             // 
             // textTotalBill
             // 
             this.textTotalBill.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textTotalBill.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textTotalBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTotalBill.Location = new System.Drawing.Point(133, 34);
-            this.textTotalBill.Margin = new System.Windows.Forms.Padding(4);
+            this.textTotalBill.Location = new System.Drawing.Point(106, 27);
             this.textTotalBill.Name = "textTotalBill";
             this.textTotalBill.ReadOnly = true;
-            this.textTotalBill.Size = new System.Drawing.Size(314, 29);
+            this.textTotalBill.Size = new System.Drawing.Size(252, 24);
             this.textTotalBill.TabIndex = 2;
             this.textTotalBill.TabStop = false;
             // 
@@ -297,10 +287,9 @@
             // 
             this.labelPaidBill.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelPaidBill.AutoSize = true;
-            this.labelPaidBill.Location = new System.Drawing.Point(7, 54);
-            this.labelPaidBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPaidBill.Location = new System.Drawing.Point(6, 43);
             this.labelPaidBill.Name = "labelPaidBill";
-            this.labelPaidBill.Size = new System.Drawing.Size(128, 24);
+            this.labelPaidBill.Size = new System.Drawing.Size(100, 18);
             this.labelPaidBill.TabIndex = 0;
             this.labelPaidBill.Text = "Paid Amount :";
             // 
@@ -312,12 +301,11 @@
             this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(373, 11);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(298, 9);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 38);
+            this.btnSave.Size = new System.Drawing.Size(75, 30);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -328,10 +316,9 @@
             this.labelTotalBill.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTotalBill.AutoSize = true;
             this.labelTotalBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalBill.Location = new System.Drawing.Point(14, 37);
-            this.labelTotalBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalBill.Location = new System.Drawing.Point(11, 30);
             this.labelTotalBill.Name = "labelTotalBill";
-            this.labelTotalBill.Size = new System.Drawing.Size(102, 24);
+            this.labelTotalBill.Size = new System.Drawing.Size(84, 18);
             this.labelTotalBill.TabIndex = 0;
             this.labelTotalBill.Text = "Total Bill :";
             // 
@@ -368,10 +355,8 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataItems.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataItems.EnableHeadersVisualStyles = false;
             this.dataItems.Location = new System.Drawing.Point(0, 0);
-            this.dataItems.Margin = new System.Windows.Forms.Padding(4);
             this.dataItems.Name = "dataItems";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -381,9 +366,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataItems.RowHeadersVisible = false;
-            this.dataItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataItems.Size = new System.Drawing.Size(918, 594);
+            this.dataItems.Size = new System.Drawing.Size(712, 475);
             this.dataItems.TabIndex = 7;
             this.dataItems.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataItems_CellEndEdit);
             this.dataItems.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataItems_RowsRemoved);
@@ -455,9 +438,10 @@
             this.rightPanel.Controls.Add(this.rightBottom2);
             this.rightPanel.Controls.Add(this.rightBottomPan);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightPanel.Location = new System.Drawing.Point(918, 0);
+            this.rightPanel.Location = new System.Drawing.Point(712, 0);
+            this.rightPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(480, 660);
+            this.rightPanel.Size = new System.Drawing.Size(384, 528);
             this.rightPanel.TabIndex = 5;
             // 
             // panel1
@@ -465,22 +449,25 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 419);
+            this.panel1.Location = new System.Drawing.Point(0, 340);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(480, 181);
+            this.panel1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.panel1.Size = new System.Drawing.Size(384, 140);
             this.panel1.TabIndex = 3;
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox2.Controls.Add(this.labelPaidBill);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.textPaidAmount);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(8, 0);
+            this.groupBox2.Location = new System.Drawing.Point(6, 10);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(460, 175);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(368, 130);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Payment Details";
@@ -491,27 +478,30 @@
             this.rigthFill.Controls.Add(this.groupBox3);
             this.rigthFill.Controls.Add(this.groupBox1);
             this.rigthFill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rigthFill.Location = new System.Drawing.Point(0, 66);
+            this.rigthFill.Location = new System.Drawing.Point(0, 53);
+            this.rigthFill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rigthFill.Name = "rigthFill";
-            this.rigthFill.Padding = new System.Windows.Forms.Padding(10);
-            this.rigthFill.Size = new System.Drawing.Size(480, 534);
+            this.rigthFill.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.rigthFill.Size = new System.Drawing.Size(384, 427);
             this.rigthFill.TabIndex = 2;
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox3.Controls.Add(this.textTotalBill);
             this.groupBox3.Controls.Add(this.labelTotalBill);
-            this.groupBox3.Location = new System.Drawing.Point(6, 237);
+            this.groupBox3.Location = new System.Drawing.Point(5, 190);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(461, 99);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(369, 79);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Amount";
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox1.Controls.Add(this.textSupplierContact);
             this.groupBox1.Controls.Add(this.labelSupplierName);
             this.groupBox1.Controls.Add(this.textSupplierName);
@@ -520,9 +510,11 @@
             this.groupBox1.Controls.Add(this.textSupplierAddress);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(8, 1);
+            this.groupBox1.Location = new System.Drawing.Point(6, 1);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(459, 230);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(367, 184);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Supplier Details";
@@ -536,8 +528,9 @@
             this.rightBottom2.Controls.Add(this.dateTime);
             this.rightBottom2.Dock = System.Windows.Forms.DockStyle.Top;
             this.rightBottom2.Location = new System.Drawing.Point(0, 0);
+            this.rightBottom2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rightBottom2.Name = "rightBottom2";
-            this.rightBottom2.Size = new System.Drawing.Size(480, 66);
+            this.rightBottom2.Size = new System.Drawing.Size(384, 53);
             this.rightBottom2.TabIndex = 1;
             // 
             // rightBottomPan
@@ -546,9 +539,10 @@
             this.rightBottomPan.Controls.Add(this.btnSave);
             this.rightBottomPan.Controls.Add(this.btnClear);
             this.rightBottomPan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rightBottomPan.Location = new System.Drawing.Point(0, 600);
+            this.rightBottomPan.Location = new System.Drawing.Point(0, 480);
+            this.rightBottomPan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rightBottomPan.Name = "rightBottomPan";
-            this.rightBottomPan.Size = new System.Drawing.Size(480, 60);
+            this.rightBottomPan.Size = new System.Drawing.Size(384, 48);
             this.rightBottomPan.TabIndex = 0;
             // 
             // mainPan
@@ -557,17 +551,19 @@
             this.mainPan.Controls.Add(this.panel2);
             this.mainPan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPan.Location = new System.Drawing.Point(0, 0);
+            this.mainPan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mainPan.Name = "mainPan";
-            this.mainPan.Size = new System.Drawing.Size(918, 660);
+            this.mainPan.Size = new System.Drawing.Size(712, 528);
             this.mainPan.TabIndex = 6;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dataItems);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 66);
+            this.panel3.Location = new System.Drawing.Point(0, 53);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(918, 594);
+            this.panel3.Size = new System.Drawing.Size(712, 475);
             this.panel3.TabIndex = 4;
             // 
             // panel2
@@ -577,25 +573,29 @@
             this.panel2.Controls.Add(this.purchaseReport);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(918, 66);
+            this.panel2.Size = new System.Drawing.Size(712, 53);
             this.panel2.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 21);
+            this.label4.Location = new System.Drawing.Point(10, 17);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(200, 24);
+            this.label4.Size = new System.Drawing.Size(158, 18);
             this.label4.TabIndex = 1;
             this.label4.Text = "Enter Purchased Items";
             // 
             // purchaseReport
             // 
             this.purchaseReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.purchaseReport.Location = new System.Drawing.Point(715, 16);
+            this.purchaseReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.purchaseReport.Location = new System.Drawing.Point(600, 12);
+            this.purchaseReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.purchaseReport.Name = "purchaseReport";
-            this.purchaseReport.Size = new System.Drawing.Size(172, 35);
+            this.purchaseReport.Size = new System.Drawing.Size(97, 28);
             this.purchaseReport.TabIndex = 0;
             this.purchaseReport.TabStop = false;
             this.purchaseReport.Text = "Report";
@@ -604,15 +604,15 @@
             // 
             // PurchasePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1398, 660);
+            this.ClientSize = new System.Drawing.Size(1096, 528);
             this.Controls.Add(this.mainPan);
             this.Controls.Add(this.rightPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PurchasePage";

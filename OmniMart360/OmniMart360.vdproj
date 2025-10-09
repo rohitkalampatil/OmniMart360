@@ -148,61 +148,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9014CF2E10A181341C1F7586FD2C6CF5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1EA820467DCD4E7DE8305F6C3FA6C7C4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_68B01DAF9F8311347405D2D974540385"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3B236571C53FEB5D03D5D3155759E8A1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8891F4A66E1A9D7EC1C67B8638026B06"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_09A21C766E67468A6DDCD226E9C4A07D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_088B3BFDC69FD0AFC3556FAB95E6EF41"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9EAA2DAB211789B69113EC31209CD22E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8558368977EA2EBC76417D4B0E9AF1D5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3DB7E13AD54829997283D6C9D0E4872F"
+        "OwnerKey" = "8:_C46320D1763E4E7EA1560663C8576A0D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -214,7 +160,61 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C46320D1763E4E7EA1560663C8576A0D"
+        "OwnerKey" = "8:_3DB7E13AD54829997283D6C9D0E4872F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8558368977EA2EBC76417D4B0E9AF1D5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9EAA2DAB211789B69113EC31209CD22E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_088B3BFDC69FD0AFC3556FAB95E6EF41"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_09A21C766E67468A6DDCD226E9C4A07D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8891F4A66E1A9D7EC1C67B8638026B06"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3B236571C53FEB5D03D5D3155759E8A1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_68B01DAF9F8311347405D2D974540385"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1EA820467DCD4E7DE8305F6C3FA6C7C4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9014CF2E10A181341C1F7586FD2C6CF5"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -745,21 +745,21 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OmniMart360"
-        "ProductCode" = "8:{794D17B7-A9DE-4C4E-84A8-3F83E80AC500}"
-        "PackageCode" = "8:{30702C1D-92F6-4A94-83AA-E290607CADAB}"
+        "ProductCode" = "8:{57FF007E-4BC5-4800-B0D1-905030BB5CCF}"
+        "PackageCode" = "8:{A5379D9C-BD96-47A8-AEB4-D4BCC228EB39}"
         "UpgradeCode" = "8:{242CB223-04D6-46D5-A614-A12CC41D5001}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.6"
-        "Manufacturer" = "8:Default Company Name"
+        "ProductVersion" = "8:1.0.7"
+        "Manufacturer" = "8:KodeBench"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:OmniMart360"
+        "Title" = "8:OmniMart360 v1.0.7"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:KodeBench"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
