@@ -226,3 +226,10 @@ G:\Courses\GitHub projects\OmniMart360\RMS\obj\x86\Debug\RMS.SupplierPage.resour
 G:\Courses\GitHub projects\OmniMart360\RMS\obj\x86\Debug\RMS.csproj.GenerateResource.Cache
 G:\Courses\GitHub projects\OmniMart360\RMS\obj\x86\Debug\RMS.exe
 G:\Courses\GitHub projects\OmniMart360\RMS\obj\x86\Debug\RMS.pdb
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\RMS\bin\Debug\BusinessLayer.dll
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\RMS\bin\Debug\Models.dll
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\RMS\bin\Debug\DataAccessLayer.dll
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\RMS\bin\Debug\BusinessLayer.pdb
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\RMS\bin\Debug\Models.pdb
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\RMS\bin\Debug\DataAccessLayer.pdb
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Debug\RMS.SupplierUpdate.resources

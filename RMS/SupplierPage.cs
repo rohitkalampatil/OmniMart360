@@ -3,21 +3,17 @@ using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Linq;
 
 using BusinessLayer;
 using Models;
+using System.Collections.Generic;
 
 namespace RMS
 {
     public partial class SupplierPage : Form
     {
         MySqlConnection c1;
-        MySqlCommand cmd;
-        string q1 = "";
-        MySqlDataAdapter da;
-        DataTable t;
-        string supName = "", supAdd = "", supEmail = "";
-        long supMob = 0;
 
         SupplierBLL bl = new SupplierBLL();
 
@@ -34,43 +30,36 @@ namespace RMS
             refreshFunction();
         }
 
-        private void refreshFunction()
+        //refresh button
+        private void button1_Click(object sender, EventArgs e)
         {
-            c1.Open();
-            try
+            refreshFunction();
+        }
+        // Add Supplier
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            SupplierModel supplier = new SupplierModel
             {
-                q1 = "select * from supplier";
-                da = new MySqlDataAdapter(q1, c1);
-                t = new DataTable();
-                da.Fill(t);
-                PopulateDataGridView(t);
+                SupplierName = textName.Text,
+                Mobile = Convert.ToInt64(textMobile.Text),
+                Email = textEmail.Text,
+                Address = textAddress.Text,
+                BankAcc = textBankAccount.Text,
+                IFSC = textIFSC.Text,
+                PAN = textPAN.Text,
+                GSTIN = textGSTIN.Text
                 
-            }
-            finally
-            {
-                if (c1.State == ConnectionState.Open)
-                    c1.Close();
-            }
+            };
+
+            string msg = bl.AddSupplier(supplier);
+            MessageBox.Show(msg, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClearAll();
+            refreshFunction();
         }
-        private void PopulateDataGridView(DataTable table)
-        {
-            dataSupplier.Rows.Clear(); // Clear existing rows
-
-            foreach (DataRow row in table.Rows)
-            {
-                int rowIndex = dataSupplier.Rows.Add();
-
-                dataSupplier.Rows[rowIndex].Cells["supplierName"].Value = row["supplier_name"].ToString().ToUpper();
-                dataSupplier.Rows[rowIndex].Cells["supplierMobile"].Value = row["mobile"];
-                dataSupplier.Rows[rowIndex].Cells["supplierEmail"].Value = row["email"];
-
-            }
-        }
-
+        // Clear Button
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearAll();
-
         }
 
         private void ClearAll()
@@ -79,23 +68,68 @@ namespace RMS
             textMobile.Text = "";
             textEmail.Text = "";
             textAddress.Text = "";
+            textBankAccount.Text = "";
+            textIFSC.Text = "";
+            textPAN.Text = "";
+            textGSTIN.Text = "";
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            SupplierModel supplier = new SupplierModel 
-            { 
-                SupplierName = textName.Text,
-                Mobile = Convert.ToInt64(textMobile.Text),
-                Email = textEmail.Text,
-                Address = textAddress.Text,
-                BankAcc=textBankAccount.Text,
-                IFSC = textIFSC.Text,
-                PAN = textPAN.Text
-            };
+        
 
-            string msg = bl.AddSupplier(supplier);
-            MessageBox.Show(msg,"Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+        private void dataSupplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3 && e.RowIndex >= 0)
+            {
+
+                string supplierEmail = dataSupplier.Rows[e.RowIndex].Cells[2].Value.ToString();
+                SupplierUpdate obj = new SupplierUpdate(supplierEmail);
+                obj.ShowDialog();
+
+            }
+        }
+
+
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string filterText = textSearch.Text.Trim().ToLower();
+
+            var allSuppliers = bl.getAllSuppliers();
+
+            if (string.IsNullOrEmpty(filterText))
+            {
+                PopulateDataGridView(allSuppliers); // Show all if no filter
+            }
+            else
+            {
+                var filteredSuppliers = allSuppliers.Where(s =>
+                    (s.SupplierName != null && s.SupplierName.ToLower().Contains(filterText)) ||
+                    (s.Mobile.ToString().Contains(filterText)) ||
+                    (s.Email != null && s.Email.ToLower().Contains(filterText))
+                ).ToList();
+
+                PopulateDataGridView(filteredSuppliers);
+            }
+        }
+
+        private void PopulateDataGridView(List<SupplierModel> suppliers)
+        {
+            dataSupplier.Rows.Clear(); // Clear existing rows
+
+            foreach (var supplier in suppliers)
+            {
+                int rowIndex = dataSupplier.Rows.Add();
+
+                dataSupplier.Rows[rowIndex].Cells["supplierName"].Value = supplier.SupplierName.ToUpper();
+                dataSupplier.Rows[rowIndex].Cells["supplierMobile"].Value = supplier.Mobile;
+                dataSupplier.Rows[rowIndex].Cells["supplierEmail"].Value = supplier.Email;
+            }
+        }
+        private void refreshFunction()
+        {
+            var suppliers = bl.getAllSuppliers();
+            PopulateDataGridView(suppliers);
         }
 
 
@@ -108,40 +142,17 @@ namespace RMS
         {
             textMobile.Text = Regex.Replace(textMobile.Text, "[^0-9]", "");
         }
-        //refresh button
-        private void button1_Click(object sender, EventArgs e)
-        {
-            refreshFunction();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            string filterText = textSearch.Text.Trim().ToLower();
-            if (string.IsNullOrEmpty(filterText))
-            {
-                PopulateDataGridView(t); // Reset to original data if search text is empty
-            }
-            else
-            {
-                // Apply filter to the DataTable
-                DataView dv = new DataView(t);
-                dv.RowFilter = string.Format("CONVERT(supplier_name, System.String) LIKE '%{0}%' OR CONVERT(mobile, System.String) LIKE '%{0}%' OR CONVERT(email, System.String) LIKE '%{0}%' ", filterText);
-                PopulateDataGridView(dv.ToTable());
-            }
-        }
 
 
-        
         private void textEmail_TextChanged(object sender, EventArgs e)
         {
-            textEmail.Text = Regex.Replace(textEmail.Text,"[^a-zA-Z @._ ]","");
+            textEmail.Text = Regex.Replace(textEmail.Text, "[^a-zA-Z@._]", "");
         }
 
         private void textAddress_TextChanged(object sender, EventArgs e)
         {
-            textAddress.Text = Regex.Replace(textAddress.Text, "[^a-zA-Z ]", "");
+            textAddress.Text = Regex.Replace(textAddress.Text, "[^a-zA-Z 0-9]", "");
         }
-
 
     }
 }

@@ -21,5 +21,6 @@ namespace Models
         public string IFSC { get; set; }
 
         public string PAN { get; set; }
+        public string GSTIN { get; set; }
     }
 }

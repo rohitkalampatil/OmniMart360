@@ -79,17 +79,19 @@
             this.panKpis.Controls.Add(this.tblKpi);
             this.panKpis.Dock = System.Windows.Forms.DockStyle.Top;
             this.panKpis.Location = new System.Drawing.Point(0, 0);
+            this.panKpis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panKpis.Name = "panKpis";
-            this.panKpis.Size = new System.Drawing.Size(1361, 193);
+            this.panKpis.Size = new System.Drawing.Size(1021, 157);
             this.panKpis.TabIndex = 3;
             // 
             // lblOwner
             // 
             this.lblOwner.AutoSize = true;
-            this.lblOwner.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOwner.Location = new System.Drawing.Point(11, 16);
+            this.lblOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOwner.Location = new System.Drawing.Point(8, 13);
+            this.lblOwner.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOwner.Name = "lblOwner";
-            this.lblOwner.Size = new System.Drawing.Size(368, 24);
+            this.lblOwner.Size = new System.Drawing.Size(287, 20);
             this.lblOwner.TabIndex = 0;
             this.lblOwner.Text = "Omnimar360 - Manage store Effectively";
             // 
@@ -107,14 +109,14 @@
             this.tblKpi.Controls.Add(this.panKpiMargin, 2, 0);
             this.tblKpi.Controls.Add(this.panKpiItems, 3, 0);
             this.tblKpi.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tblKpi.Location = new System.Drawing.Point(0, 54);
-            this.tblKpi.Margin = new System.Windows.Forms.Padding(30);
+            this.tblKpi.Location = new System.Drawing.Point(0, 44);
+            this.tblKpi.Margin = new System.Windows.Forms.Padding(22, 24, 22, 24);
             this.tblKpi.Name = "tblKpi";
-            this.tblKpi.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
+            this.tblKpi.Padding = new System.Windows.Forms.Padding(19, 0, 19, 0);
             this.tblKpi.RowCount = 1;
             this.tblKpi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.42857F));
             this.tblKpi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.57143F));
-            this.tblKpi.Size = new System.Drawing.Size(1361, 139);
+            this.tblKpi.Size = new System.Drawing.Size(1021, 113);
             this.tblKpi.TabIndex = 5;
             // 
             // panKpiProfit
@@ -126,19 +128,21 @@
             this.panKpiProfit.Controls.Add(this.lblKpiProfit);
             this.panKpiProfit.Controls.Add(this.kpisales);
             this.panKpiProfit.Controls.Add(this.pickpiProfit);
-            this.panKpiProfit.Location = new System.Drawing.Point(355, 3);
+            this.panKpiProfit.Location = new System.Drawing.Point(266, 2);
+            this.panKpiProfit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panKpiProfit.Name = "panKpiProfit";
-            this.panKpiProfit.Size = new System.Drawing.Size(321, 133);
+            this.panKpiProfit.Size = new System.Drawing.Size(241, 109);
             this.panKpiProfit.TabIndex = 0;
             // 
             // lblKpiProfit
             // 
             this.lblKpiProfit.AutoSize = true;
-            this.lblKpiProfit.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKpiProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKpiProfit.ForeColor = System.Drawing.Color.White;
-            this.lblKpiProfit.Location = new System.Drawing.Point(28, 89);
+            this.lblKpiProfit.Location = new System.Drawing.Point(21, 72);
+            this.lblKpiProfit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblKpiProfit.Name = "lblKpiProfit";
-            this.lblKpiProfit.Size = new System.Drawing.Size(60, 24);
+            this.lblKpiProfit.Size = new System.Drawing.Size(54, 20);
             this.lblKpiProfit.TabIndex = 2;
             this.lblKpiProfit.Text = "Sales";
             // 
@@ -147,11 +151,12 @@
             this.kpisales.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.kpisales.AutoSize = true;
             this.kpisales.BackColor = System.Drawing.Color.Transparent;
-            this.kpisales.Font = new System.Drawing.Font("Bahnschrift SemiBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kpisales.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kpisales.ForeColor = System.Drawing.Color.White;
-            this.kpisales.Location = new System.Drawing.Point(9, 17);
+            this.kpisales.Location = new System.Drawing.Point(7, 14);
+            this.kpisales.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kpisales.Name = "kpisales";
-            this.kpisales.Size = new System.Drawing.Size(200, 72);
+            this.kpisales.Size = new System.Drawing.Size(169, 55);
             this.kpisales.TabIndex = 1;
             this.kpisales.Text = "$234K";
             // 
@@ -160,8 +165,9 @@
             this.pickpiProfit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pickpiProfit.Image = ((System.Drawing.Image)(resources.GetObject("pickpiProfit.Image")));
             this.pickpiProfit.Location = new System.Drawing.Point(0, 0);
+            this.pickpiProfit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pickpiProfit.Name = "pickpiProfit";
-            this.pickpiProfit.Size = new System.Drawing.Size(321, 133);
+            this.pickpiProfit.Size = new System.Drawing.Size(241, 109);
             this.pickpiProfit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pickpiProfit.TabIndex = 0;
             this.pickpiProfit.TabStop = false;
@@ -175,19 +181,21 @@
             this.panKpiSales.Controls.Add(this.lblKpiSales);
             this.panKpiSales.Controls.Add(this.kpiPurchase);
             this.panKpiSales.Controls.Add(this.picKpiSales);
-            this.panKpiSales.Location = new System.Drawing.Point(28, 3);
+            this.panKpiSales.Location = new System.Drawing.Point(21, 2);
+            this.panKpiSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panKpiSales.Name = "panKpiSales";
-            this.panKpiSales.Size = new System.Drawing.Size(321, 133);
+            this.panKpiSales.Size = new System.Drawing.Size(241, 109);
             this.panKpiSales.TabIndex = 0;
             // 
             // lblKpiSales
             // 
             this.lblKpiSales.AutoSize = true;
-            this.lblKpiSales.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKpiSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKpiSales.ForeColor = System.Drawing.Color.White;
-            this.lblKpiSales.Location = new System.Drawing.Point(27, 90);
+            this.lblKpiSales.Location = new System.Drawing.Point(20, 73);
+            this.lblKpiSales.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblKpiSales.Name = "lblKpiSales";
-            this.lblKpiSales.Size = new System.Drawing.Size(95, 24);
+            this.lblKpiSales.Size = new System.Drawing.Size(84, 20);
             this.lblKpiSales.TabIndex = 2;
             this.lblKpiSales.Text = "Purchase";
             // 
@@ -196,11 +204,12 @@
             this.kpiPurchase.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.kpiPurchase.AutoSize = true;
             this.kpiPurchase.BackColor = System.Drawing.Color.Transparent;
-            this.kpiPurchase.Font = new System.Drawing.Font("Bahnschrift SemiBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kpiPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kpiPurchase.ForeColor = System.Drawing.Color.White;
-            this.kpiPurchase.Location = new System.Drawing.Point(9, 17);
+            this.kpiPurchase.Location = new System.Drawing.Point(7, 14);
+            this.kpiPurchase.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kpiPurchase.Name = "kpiPurchase";
-            this.kpiPurchase.Size = new System.Drawing.Size(200, 72);
+            this.kpiPurchase.Size = new System.Drawing.Size(169, 55);
             this.kpiPurchase.TabIndex = 1;
             this.kpiPurchase.Text = "$234K";
             // 
@@ -210,8 +219,9 @@
             this.picKpiSales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picKpiSales.Image = ((System.Drawing.Image)(resources.GetObject("picKpiSales.Image")));
             this.picKpiSales.Location = new System.Drawing.Point(0, 0);
+            this.picKpiSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picKpiSales.Name = "picKpiSales";
-            this.picKpiSales.Size = new System.Drawing.Size(321, 133);
+            this.picKpiSales.Size = new System.Drawing.Size(241, 109);
             this.picKpiSales.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picKpiSales.TabIndex = 0;
             this.picKpiSales.TabStop = false;
@@ -225,19 +235,21 @@
             this.panKpiMargin.Controls.Add(this.lblKpiMargin);
             this.panKpiMargin.Controls.Add(this.kpiProfit);
             this.panKpiMargin.Controls.Add(this.picKpiMargin);
-            this.panKpiMargin.Location = new System.Drawing.Point(682, 3);
+            this.panKpiMargin.Location = new System.Drawing.Point(511, 2);
+            this.panKpiMargin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panKpiMargin.Name = "panKpiMargin";
-            this.panKpiMargin.Size = new System.Drawing.Size(321, 133);
+            this.panKpiMargin.Size = new System.Drawing.Size(241, 109);
             this.panKpiMargin.TabIndex = 0;
             // 
             // lblKpiMargin
             // 
             this.lblKpiMargin.AutoSize = true;
-            this.lblKpiMargin.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKpiMargin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKpiMargin.ForeColor = System.Drawing.Color.White;
-            this.lblKpiMargin.Location = new System.Drawing.Point(30, 89);
+            this.lblKpiMargin.Location = new System.Drawing.Point(22, 72);
+            this.lblKpiMargin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblKpiMargin.Name = "lblKpiMargin";
-            this.lblKpiMargin.Size = new System.Drawing.Size(60, 24);
+            this.lblKpiMargin.Size = new System.Drawing.Size(52, 20);
             this.lblKpiMargin.TabIndex = 2;
             this.lblKpiMargin.Text = "Profit";
             // 
@@ -246,11 +258,12 @@
             this.kpiProfit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.kpiProfit.AutoSize = true;
             this.kpiProfit.BackColor = System.Drawing.Color.Transparent;
-            this.kpiProfit.Font = new System.Drawing.Font("Bahnschrift SemiBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kpiProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kpiProfit.ForeColor = System.Drawing.Color.White;
-            this.kpiProfit.Location = new System.Drawing.Point(9, 17);
+            this.kpiProfit.Location = new System.Drawing.Point(7, 14);
+            this.kpiProfit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kpiProfit.Name = "kpiProfit";
-            this.kpiProfit.Size = new System.Drawing.Size(200, 72);
+            this.kpiProfit.Size = new System.Drawing.Size(169, 55);
             this.kpiProfit.TabIndex = 1;
             this.kpiProfit.Text = "$234K";
             // 
@@ -259,8 +272,9 @@
             this.picKpiMargin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picKpiMargin.Image = ((System.Drawing.Image)(resources.GetObject("picKpiMargin.Image")));
             this.picKpiMargin.Location = new System.Drawing.Point(0, 0);
+            this.picKpiMargin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picKpiMargin.Name = "picKpiMargin";
-            this.picKpiMargin.Size = new System.Drawing.Size(321, 133);
+            this.picKpiMargin.Size = new System.Drawing.Size(241, 109);
             this.picKpiMargin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picKpiMargin.TabIndex = 0;
             this.picKpiMargin.TabStop = false;
@@ -274,19 +288,21 @@
             this.panKpiItems.Controls.Add(this.lblKpiItems);
             this.panKpiItems.Controls.Add(this.kpiIReceivable);
             this.panKpiItems.Controls.Add(this.picKpiItems);
-            this.panKpiItems.Location = new System.Drawing.Point(1009, 3);
+            this.panKpiItems.Location = new System.Drawing.Point(756, 2);
+            this.panKpiItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panKpiItems.Name = "panKpiItems";
-            this.panKpiItems.Size = new System.Drawing.Size(324, 133);
+            this.panKpiItems.Size = new System.Drawing.Size(244, 109);
             this.panKpiItems.TabIndex = 0;
             // 
             // lblKpiItems
             // 
             this.lblKpiItems.AutoSize = true;
-            this.lblKpiItems.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKpiItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKpiItems.ForeColor = System.Drawing.Color.White;
-            this.lblKpiItems.Location = new System.Drawing.Point(28, 89);
+            this.lblKpiItems.Location = new System.Drawing.Point(21, 72);
+            this.lblKpiItems.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblKpiItems.Name = "lblKpiItems";
-            this.lblKpiItems.Size = new System.Drawing.Size(109, 24);
+            this.lblKpiItems.Size = new System.Drawing.Size(97, 20);
             this.lblKpiItems.TabIndex = 2;
             this.lblKpiItems.Text = "Receivable";
             // 
@@ -295,11 +311,12 @@
             this.kpiIReceivable.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.kpiIReceivable.AutoSize = true;
             this.kpiIReceivable.BackColor = System.Drawing.Color.Transparent;
-            this.kpiIReceivable.Font = new System.Drawing.Font("Bahnschrift SemiBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kpiIReceivable.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kpiIReceivable.ForeColor = System.Drawing.Color.White;
-            this.kpiIReceivable.Location = new System.Drawing.Point(9, 17);
+            this.kpiIReceivable.Location = new System.Drawing.Point(7, 14);
+            this.kpiIReceivable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kpiIReceivable.Name = "kpiIReceivable";
-            this.kpiIReceivable.Size = new System.Drawing.Size(200, 72);
+            this.kpiIReceivable.Size = new System.Drawing.Size(169, 55);
             this.kpiIReceivable.TabIndex = 1;
             this.kpiIReceivable.Text = "$234K";
             // 
@@ -308,8 +325,9 @@
             this.picKpiItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picKpiItems.Image = ((System.Drawing.Image)(resources.GetObject("picKpiItems.Image")));
             this.picKpiItems.Location = new System.Drawing.Point(0, 0);
+            this.picKpiItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picKpiItems.Name = "picKpiItems";
-            this.picKpiItems.Size = new System.Drawing.Size(324, 133);
+            this.picKpiItems.Size = new System.Drawing.Size(244, 109);
             this.picKpiItems.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picKpiItems.TabIndex = 0;
             this.picKpiItems.TabStop = false;
@@ -320,9 +338,10 @@
             this.panMain.Controls.Add(this.chartMonthlySales);
             this.panMain.Controls.Add(this.chart1);
             this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panMain.Location = new System.Drawing.Point(0, 193);
+            this.panMain.Location = new System.Drawing.Point(0, 157);
+            this.panMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panMain.Name = "panMain";
-            this.panMain.Size = new System.Drawing.Size(1361, 530);
+            this.panMain.Size = new System.Drawing.Size(1021, 430);
             this.panMain.TabIndex = 4;
             // 
             // chartMonthlySales
@@ -334,7 +353,8 @@
             this.chartMonthlySales.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartMonthlySales.Legends.Add(legend1);
-            this.chartMonthlySales.Location = new System.Drawing.Point(694, 6);
+            this.chartMonthlySales.Location = new System.Drawing.Point(520, 5);
+            this.chartMonthlySales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chartMonthlySales.Name = "chartMonthlySales";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -343,7 +363,7 @@
             series1.XValueMember = "month";
             series1.YValueMembers = "monthly_sales";
             this.chartMonthlySales.Series.Add(series1);
-            this.chartMonthlySales.Size = new System.Drawing.Size(655, 512);
+            this.chartMonthlySales.Size = new System.Drawing.Size(491, 415);
             this.chartMonthlySales.TabIndex = 1;
             this.chartMonthlySales.Text = "chart2";
             // 
@@ -355,26 +375,28 @@
             this.chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(28, 6);
+            this.chart1.Location = new System.Drawing.Point(21, 5);
+            this.chart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart1.Name = "chart1";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series2.Legend = "Legend1";
             series2.Name = "sales";
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(660, 512);
+            this.chart1.Size = new System.Drawing.Size(495, 415);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1361, 723);
+            this.ClientSize = new System.Drawing.Size(1021, 587);
             this.Controls.Add(this.panMain);
             this.Controls.Add(this.panKpis);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OmniMart360";

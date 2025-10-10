@@ -5,3 +5,10 @@ G:\Courses\GitHub projects\OmniMart360\DataAccessLayer\bin\Debug\Models.pdb
 G:\Courses\GitHub projects\OmniMart360\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 G:\Courses\GitHub projects\OmniMart360\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 G:\Courses\GitHub projects\OmniMart360\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\DataAccessLayer\bin\Debug\Models.dll
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\DataAccessLayer\bin\Debug\Models.pdb
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+G:\OmniMart\Billing Soft V1.0 main\RMS-main\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
