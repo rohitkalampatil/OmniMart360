@@ -121,7 +121,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAADrAAAA6wErbNfCAAAAGXRFWHRTb2Z0d2FyZQB3d3cu
+        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAADqAAAA6gH5KzUmAAAAGXRFWHRTb2Z0d2FyZQB3d3cu
         aW5rc2NhcGUub3Jnm+48GgAAAw1JREFUWEftVztoFFEUXcEPiqiIimApiBaCgoKFQsC/IiTZHdZg7b8J
         SkAs1EpEgmksRBEsIvi3UJZkdpbttElj8APbiBALMVHRWGg013Nnzm5m37733LApc+DAzOw577439747
         bzOzmC6CgqwMIsnnIrmSK8rNbFHu4bo3G8rpoCgbKZt5IMgOsISgf0Hx8B3YHTyQ+bS2CJE5WNlTI0gz
@@ -138,6 +138,9 @@
         Ba8iYD8C3gAvo4vmmjoxzaIOmcw/Cotw6sgMv/4AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="invno.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="customerName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -148,9 +151,6 @@
     <value>True</value>
   </metadata>
   <metadata name="billAmount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="invno.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="viewBtn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

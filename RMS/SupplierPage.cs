@@ -78,74 +78,9 @@ namespace RMS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (textName.Text == "")
-            {
-                MessageBox.Show("Enter Supplier Name to Continue..", "RMS - Reatail Shop Management system 1.0");
-                textName.Focus();
-            }
-            else if (textMobile.Text == "")
-            {
-                MessageBox.Show("Enter Supplier Mobile Number to continue...", "RMS - Reatail Shop Management system 1.0");
-                textMobile.Focus();
-            }
-            else if (textEmail.Text == "")
-            {
-                MessageBox.Show("Enter Supplier Email to Continue...", "RMS - Reatail Shop Management system 1.0");
-                textEmail.Focus();
-            }
-            else if (textAddress.Text == "")
-            {
-                MessageBox.Show("Enter Supplier Address to Continue...", "RMS - Reatail Shop Management system 1.0");
-                textAddress.Focus();
-            }
-            else
-            {
-                getData();
-                insertIntoTable();
-               
-            }
+
         }
 
-        private void getData()
-        {
-
-            supName = textName.Text;
-            supMob = Convert.ToInt64(textMobile.Text);
-            supEmail = textEmail.Text;
-            supAdd = textAddress.Text;
-          
-        }
-
-        private void insertIntoTable()
-        {
-            c1.Open();
-            try
-            {
-                q1 = "insert into supplier values(@supName,@supMobile,@supEmail,@supAdd);";
-                cmd = new MySqlCommand(q1, c1);
-                // Add parameters to prevent SQL injection
-                cmd.Parameters.AddWithValue("@supName", supName);
-                cmd.Parameters.AddWithValue("@supMobile", supMob);
-                cmd.Parameters.AddWithValue("@supEmail", supEmail);
-                cmd.Parameters.AddWithValue("@supAdd", supAdd);
-
-                int r = cmd.ExecuteNonQuery();
-                if (r>0)
-                {
-                    MessageBox.Show("Supplir Added Successfully..", "RMS-Store Management System. 1.0", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearAll();
-                    c1.Close();
-                }
-
-
-
-            }
-            finally
-            {
-                if (c1.State == ConnectionState.Open)
-                    c1.Close();
-            }
-        }
 
         private void textName_TextChanged(object sender, EventArgs e)
         {

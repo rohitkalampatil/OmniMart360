@@ -25,6 +25,11 @@ namespace RMS
 
         private void InventoryPage_Load(object sender, EventArgs e)
         {
+            LoadData();
+           
+        }
+        private void LoadData()
+        {
             textSearch.Focus();
             c1.Open();
             try
@@ -35,7 +40,7 @@ namespace RMS
 
                 da.Fill(t);
                 PopulateDataGridView(t);
-                
+
             }
             catch (Exception ex)
             {
@@ -46,9 +51,7 @@ namespace RMS
                 if (c1.State == ConnectionState.Open)
                     c1.Close();
             }
-           
         }
-
         private void PopulateDataGridView(DataTable table)
         {
             dataInventory.Rows.Clear(); // Clear existing rows
@@ -245,6 +248,11 @@ namespace RMS
                 if (c1.State == ConnectionState.Open)
                     c1.Close();
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

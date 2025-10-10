@@ -48,12 +48,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataInventory)).BeginInit();
             this.panelInventory.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textSearch
@@ -62,10 +64,9 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.Location = new System.Drawing.Point(16, 11);
-            this.textSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.textSearch.Location = new System.Drawing.Point(12, 9);
             this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(707, 34);
+            this.textSearch.Size = new System.Drawing.Size(462, 29);
             this.textSearch.TabIndex = 1;
             // 
             // btnSearch
@@ -74,12 +75,11 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(111)))), ((int)(((byte)(113)))));
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSearch.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSearch.Location = new System.Drawing.Point(822, 13);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Location = new System.Drawing.Point(547, 9);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 34);
+            this.btnSearch.Size = new System.Drawing.Size(75, 28);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -88,6 +88,7 @@
             // panelSearch
             // 
             this.panelSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.panelSearch.Controls.Add(this.pictureBox1);
             this.panelSearch.Controls.Add(this.button1);
             this.panelSearch.Controls.Add(this.button3);
             this.panelSearch.Controls.Add(this.btnSearch);
@@ -95,9 +96,8 @@
             this.panelSearch.Controls.Add(this.textSearch);
             this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSearch.Location = new System.Drawing.Point(0, 0);
-            this.panelSearch.Margin = new System.Windows.Forms.Padding(4);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(1463, 58);
+            this.panelSearch.Size = new System.Drawing.Size(1028, 47);
             this.panelSearch.TabIndex = 0;
             // 
             // button1
@@ -106,11 +106,12 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(111)))), ((int)(((byte)(113)))));
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(936, 13);
+            this.button1.Location = new System.Drawing.Point(633, 9);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 34);
+            this.button1.Size = new System.Drawing.Size(97, 28);
             this.button1.TabIndex = 3;
             this.button1.Text = "Zero Stock";
             this.button1.UseVisualStyleBackColor = false;
@@ -122,11 +123,12 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(111)))), ((int)(((byte)(113)))));
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button3.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1244, 12);
+            this.button3.Location = new System.Drawing.Point(864, 9);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(206, 35);
+            this.button3.Size = new System.Drawing.Size(154, 28);
             this.button3.TabIndex = 2;
             this.button3.Text = "Export To PDF";
             this.button3.UseVisualStyleBackColor = false;
@@ -138,11 +140,12 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(111)))), ((int)(((byte)(113)))));
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1079, 13);
+            this.button2.Location = new System.Drawing.Point(740, 9);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 34);
+            this.button2.Size = new System.Drawing.Size(113, 28);
             this.button2.TabIndex = 2;
             this.button2.Text = "Low Stock";
             this.button2.UseVisualStyleBackColor = false;
@@ -187,14 +190,13 @@
             this.dataInventory.EnableHeadersVisualStyles = false;
             this.dataInventory.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataInventory.Location = new System.Drawing.Point(0, 0);
-            this.dataInventory.Margin = new System.Windows.Forms.Padding(4);
             this.dataInventory.Name = "dataInventory";
             this.dataInventory.RowHeadersVisible = false;
             this.dataInventory.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(3);
             this.dataInventory.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataInventory.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataInventory.Size = new System.Drawing.Size(887, 496);
+            this.dataInventory.Size = new System.Drawing.Size(596, 403);
             this.dataInventory.TabIndex = 0;
             // 
             // productName
@@ -230,10 +232,9 @@
             this.panelInventory.Controls.Add(this.panel3);
             this.panelInventory.Controls.Add(this.panel1);
             this.panelInventory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelInventory.Location = new System.Drawing.Point(0, 58);
-            this.panelInventory.Margin = new System.Windows.Forms.Padding(4);
+            this.panelInventory.Location = new System.Drawing.Point(0, 47);
             this.panelInventory.Name = "panelInventory";
-            this.panelInventory.Size = new System.Drawing.Size(1463, 496);
+            this.panelInventory.Size = new System.Drawing.Size(1028, 403);
             this.panelInventory.TabIndex = 1;
             // 
             // panel3
@@ -241,8 +242,9 @@
             this.panel3.Controls.Add(this.dataInventory);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(887, 496);
+            this.panel3.Size = new System.Drawing.Size(596, 403);
             this.panel3.TabIndex = 2;
             // 
             // panel1
@@ -251,9 +253,10 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(887, 0);
+            this.panel1.Location = new System.Drawing.Point(596, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(576, 496);
+            this.panel1.Size = new System.Drawing.Size(432, 403);
             this.panel1.TabIndex = 1;
             // 
             // dataGridView1
@@ -263,35 +266,48 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 33);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(576, 455);
+            this.dataGridView1.Size = new System.Drawing.Size(432, 370);
             this.dataGridView1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(10);
-            this.label1.Size = new System.Drawing.Size(159, 41);
+            this.label1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.label1.Size = new System.Drawing.Size(129, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Stocks Summary";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(515, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // InventoryPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1463, 554);
+            this.ClientSize = new System.Drawing.Size(1028, 450);
             this.Controls.Add(this.panelInventory);
             this.Controls.Add(this.panelSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InventoryPage";
             this.Text = "x";
             this.Load += new System.EventHandler(this.InventoryPage_Load);
@@ -303,6 +319,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,5 +342,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn purchaseRate;
         private System.Windows.Forms.DataGridViewTextBoxColumn sellingRate;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
