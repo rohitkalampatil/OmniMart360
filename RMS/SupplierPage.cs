@@ -2,15 +2,10 @@
 using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-
-using Models;
-using BusinessLayer;
-
 using MySql.Data.MySqlClient;
 
-
-
-
+using BusinessLayer;
+using Models;
 
 namespace RMS
 {
@@ -24,13 +19,7 @@ namespace RMS
         string supName = "", supAdd = "", supEmail = "";
         long supMob = 0;
 
-
-
-
-
-
         SupplierBLL bl = new SupplierBLL();
-
 
         public SupplierPage()
         {
@@ -63,33 +52,6 @@ namespace RMS
                     c1.Close();
             }
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            SupplierModel supplier = new SupplierModel 
-            {
-                
-            };
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void PopulateDataGridView(DataTable table)
         {
             dataSupplier.Rows.Clear(); // Clear existing rows
@@ -119,7 +81,22 @@ namespace RMS
             textAddress.Text = "";
         }
 
-     
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            SupplierModel supplier = new SupplierModel 
+            { 
+                SupplierName = textName.Text,
+                Mobile = Convert.ToInt64(textMobile.Text),
+                Email = textEmail.Text,
+                Address = textAddress.Text,
+                BankAcc=textBankAccount.Text,
+                IFSC = textIFSC.Text,
+                PAN = textPAN.Text
+            };
+
+            string msg = bl.AddSupplier(supplier);
+            MessageBox.Show(msg,"Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
 
 
         private void textName_TextChanged(object sender, EventArgs e)

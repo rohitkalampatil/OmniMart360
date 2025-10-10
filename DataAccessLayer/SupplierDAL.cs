@@ -9,7 +9,7 @@ namespace DataAccessLayer
     public class SupplierDAL
     {
         public int InsertSupplier(SupplierModel supplier)
-        {
+        {  
             try
             {
                 using (MySqlConnection conn = DBC.GetConnection() )
@@ -34,8 +34,11 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                // Log or rethrow as needed
-                throw new ApplicationException("Error inserting supplier: " + ex.Message);
+                /*
+                * Handling the Error or Exception while inserting valid data 
+                * return nothing on exception
+                */
+                return 0;
             }
         }
     }

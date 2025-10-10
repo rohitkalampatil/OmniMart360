@@ -13,214 +13,167 @@ using System.Drawing.Printing;
 namespace RMS
 {
     public partial class ReceiptUpdate : Form
+{
+    int invNo = 0;
+    MySqlConnection c1;
+    MySqlCommand cmd;
+    MySqlDataAdapter da;
+    DataTable t;
+    MySqlDataReader reader;
+
+    private decimal oldTotalBill = 0;
+    private decimal oldTotalAmount = 0;
+    decimal oldPaidAmount = 0;
+    decimal oldRemainingAmount = 0;
+
+    public ReceiptUpdate(int invNo)
     {
-        int invNo = 0;
-        MySqlConnection c1;
-        MySqlCommand cmd;
-        MySqlDataAdapter da;
-        DataTable t;
-        MySqlDataReader reader;
-        
-        
-        private decimal oldTotalBill=0;
-        private decimal oldTotalAmount=0;
-        decimal oldPaidAmount = 0;
-        decimal oldRemainingAmount = 0;
-        
-        
- 
+        this.invNo = invNo;
+        InitializeComponent();
+    }
 
-        // Parameterised Constructor
-        public ReceiptUpdate(int invNo)
-        {
-            this.invNo = invNo;
-            InitializeComponent();
-        }
+    private void ReceiptUpdate_Load(object sender, EventArgs e)
+    {
+        txtPaidAmt.Text = "0";
+        c1 = DBConnection.GetConnection();
+        InitializeDataGridView();
+        showDataItems();
+    }
 
-        private void ReceiptUpdate_Load(object sender, EventArgs e)
+    private void InitializeDataGridView()
+    {
+        dataGridView1.Columns.Clear();
+        dataGridView1.Columns.Add("ItemName", "Item Name");
+        dataGridView1.Columns.Add("SellingRate", "Selling Rate");
+        dataGridView1.Columns.Add("Quantity", "Quantity");
+        dataGridView1.Columns.Add("ReturnQuantity", "Return Quantity");
+        dataGridView1.Columns.Add("Amount", "Amount");
+    }
+
+    private void showDataItems()
+    {
+        btnUpdate.Visible = false;
+        invoiceNo.Text = invNo.ToString();
+
+        try
         {
-            txtPaidAmt.Text = "0";
-            
-            c1 = DBConnection.GetConnection();
-            
-            showDataItems();
-        }
-        /*
-         *  Loads Data 
-         */
-        private void showDataItems()
-        {
-            if (btnUpdate.Visible) { 
-                btnUpdate.Visible = false;  
-            }
-            // setting label to  invNo
-            invoiceNo.Text=invNo.ToString();
-            
             c1.Open();
+
+            // Fetch sold items
+            string q = "SELECT itemname, sellingrate, quantity FROM solditems WHERE invoiceno = @invNo";
+            cmd = new MySqlCommand(q, c1);
+            cmd.Parameters.AddWithValue("@invNo", invNo);
+            da = new MySqlDataAdapter(cmd);
+            t = new DataTable();
+            da.Fill(t);
+
+            if (t.Rows.Count == 0)
+            {
+
+                MessageBox.Show("No sold items found for this invoice.", "OmniMart360", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            PopulateDataGridView(t);
+
+            // Fetch receipt and customer details
+            string p = @"SELECT r.date, r.cust_name, r.cust_mobile, r.bill, r.discount, r.totalamount,
+                         rc.paid, rc.remaining, rc.billamount
+                         FROM receipts r
+                         LEFT JOIN receivable rc ON r.invoiceno = rc.invoiceno
+                         WHERE r.invoiceno = @invNo";
+
+            cmd = new MySqlCommand(p, c1);
+            cmd.Parameters.AddWithValue("@invNo", invNo);
+            reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                lablDate.Text = reader["date"].ToString();
+                lblName.Text = reader["cust_name"].ToString();
+                lblMobile.Text = reader["cust_mobile"].ToString();
+                textBill.Text = reader["bill"].ToString();
+                textDiscount.Text = reader["discount"].ToString() + "%";
+                textTotal.Text = reader["totalamount"].ToString();
+
+                oldPaidAmount = reader["paid"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["paid"]);
+                lblPaidAmt.Text = oldPaidAmount.ToString();
+
+                oldRemainingAmount = reader["remaining"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["remaining"]);
+                txtRemAmt.Text = oldRemainingAmount.ToString();
+                txtRemAmt.ReadOnly = oldRemainingAmount == 0;
+
+                oldTotalAmount = reader["billamount"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["billamount"]);
+                oldTotalBill = Convert.ToDecimal(reader["bill"]);
+
+                txtPaidAmt.ReadOnly = oldRemainingAmount <= 0;
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error: " + ex.Message, "OmniMart360", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        finally
+        {
+            reader.Close();
+            if (c1.State == ConnectionState.Open)
+                c1.Close();
+        }
+    }
+
+    private void PopulateDataGridView(DataTable table)
+    {
+        dataGridView1.Rows.Clear();
+
+        foreach (DataRow row in table.Rows)
+        {
             try
             {
-                //fetching sold items for invoice
-                string q = "select itemname,sellingrate,quantity from solditems where invoiceno=" + invNo;
-                
-                da = new MySqlDataAdapter(q, c1);
-                t = new DataTable();
-                da.Fill(t);
-                //sending to render
-                PopulateDataGridView(t);
+                int rowIndex = dataGridView1.Rows.Add();
+                string itemName = row["itemname"].ToString();
+                decimal rate = Convert.ToDecimal(row["sellingrate"]);
+                int quantity = Convert.ToInt32(row["quantity"]);
+                decimal amount = rate * quantity;
 
-                //getting customer details
-                // issue seperate receivable and direct customers query
-                string p= "SELECT r.date, r.cust_name, r.cust_mobile, r.bill, r.discount, r.totalamount, rc.paid, rc.remaining,rc.billamount FROM receipts r left JOIN receivable rc ON r.invoiceno = rc.invoiceno WHERE r.invoiceno = " + invNo+";";
-
-                cmd = new MySqlCommand(p, c1);
-
-                reader = cmd.ExecuteReader();
-                if (reader.Read()) {
-                    
-                    //receipt date
-                    lablDate.Text = reader["date"].ToString();
-                    
-                    //customer name
-                    lblName.Text = reader["cust_name"].ToString();
-                    
-                    //customer mobile
-                    lblMobile.Text = reader["cust_mobile"].ToString();
-                    
-                    // old total bill
-                    textBill.Text= reader["bill"].ToString();
-                    
-                    // discount on old total bill
-                    textDiscount.Text = reader["discount"].ToString()+"%"; 
-                    
-                    //old total amount
-                    textTotal.Text = reader["totalamount"].ToString();
-                    
-                    // old paid amount
-                    if (reader["paid"] == DBNull.Value)
-                    {
-                        lblPaidAmt.Text = reader["totalamount"].ToString();
-                        oldPaidAmount = 0;
-                    }
-                    else
-                    {
-                        oldPaidAmount = Convert.ToDecimal(reader["paid"].ToString());
-                        lblPaidAmt.Text = reader["paid"].ToString();
-                    }
-                    // old remaining amount
-                    if (reader["remaining"] == DBNull.Value)
-                    {
-                        oldRemainingAmount = 0;
-                        txtRemAmt.Text ="0";
-                        txtRemAmt.ReadOnly = true;
-                    }
-                    else
-                    {
-                        oldRemainingAmount = Convert.ToDecimal(reader["remaining"].ToString());
-                        txtRemAmt.Text = reader["remaining"].ToString();
-                    }
-
-                    if (reader["billamount"] == DBNull.Value)
-                    {
-                        oldTotalAmount = 0;
-                    }
-                    else
-                    {
-                        oldTotalAmount = Convert.ToDecimal(reader["billamount"].ToString());
-                        
-                    }
-                    
-                    //get into varibales
-                                       
-                    oldTotalBill = Convert.ToDecimal(reader["bill"].ToString());
-                    if (!(Convert.ToDecimal(txtRemAmt.Text) > 0))
-                        txtPaidAmt.ReadOnly = true;
-                    
-                }
-                
+                dataGridView1.Rows[rowIndex].Cells[0].Value = itemName;
+                dataGridView1.Rows[rowIndex].Cells[1].Value = rate;
+                dataGridView1.Rows[rowIndex].Cells[2].Value = quantity;
+                dataGridView1.Rows[rowIndex].Cells[3].Value = 0; // default return quantity
+                dataGridView1.Rows[rowIndex].Cells[4].Value = amount;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: "+ex,"OmniMart360",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                
-            }
-            finally
-            {
-                reader.Close();
-                if (c1.State == ConnectionState.Open)
-                    c1.Close();
+                MessageBox.Show("Error populating grid: " + ex.Message, "OmniMart360", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        /*
-         *  Renders Sold Items 
-         */
-        private void PopulateDataGridView(DataTable table)
+    }
+
+    private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.ColumnIndex == dataGridView1.Columns["ReturnQuantity"].Index)
         {
-            dataGridView1.Rows.Clear();
-            foreach (DataRow row in table.Rows)
+            int returnQuantity = 0;
+            if (dataGridView1[3, e.RowIndex].Value != null &&
+                int.TryParse(dataGridView1[3, e.RowIndex].Value.ToString(), out returnQuantity))
             {
-                int rowIndex = dataGridView1.Rows.Add();
-
-                dataGridView1.Rows[rowIndex].Cells[0].Value = row["itemname"];
-                dataGridView1.Rows[rowIndex].Cells[1].Value = row["sellingrate"];
-                // setting purchase rate to calculate productAmount
-                decimal sellingrate = Convert.ToDecimal(row["sellingrate"].ToString());
-                dataGridView1.Rows[rowIndex].Cells[2].Value = row["quantity"];
-                int oldQuantity = Convert.ToInt32(row["quantity"].ToString());
-
-                // calculated productAmount
-                dataGridView1.Rows[rowIndex].Cells[4].Value = sellingrate*oldQuantity;
-           
-            }
-        }
-        /*
-         *  Retun Quantity cell edit change handler 
-         *  handles when user return any products and recalculate amount
-         */
-        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            // checking user is changing return quantity
-            if (e.ColumnIndex == dataGridView1.Columns[3].Index)
-            {
-                //get return quantity of returned product
-                int returnQuantity=0;
-
-                if (dataGridView1[3, e.RowIndex].Value != null && int.TryParse(dataGridView1[3, e.RowIndex].Value.ToString(), out returnQuantity))
-                {
-                    returnQuantity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
-                }
-                
-                // get its rate from cell
                 decimal rate = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
-                
-                // get its sold quantity
                 int soldQuantity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
 
-                // checking return quantity is valid 
-                if (returnQuantity>=0 && returnQuantity <= soldQuantity)
+                if (returnQuantity >= 0 && returnQuantity <= soldQuantity)
                 {
-                    // reseting products quantity
-                    soldQuantity -= returnQuantity;
-
-                    //getting its oldSoldAmount
-                    decimal productAmount = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
-                    // Calculate the productAmount
-                    decimal newSoldAmount = rate * soldQuantity;
-                    productAmount = newSoldAmount - productAmount;
-
-
-                    updateT(productAmount);
-                    // Update the Amount cell with the calculated value
-                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = newSoldAmount;
+                    int newQuantity = soldQuantity - returnQuantity;
+                    decimal newAmount = rate * newQuantity;
+                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = newAmount;
                     btnUpdate.Visible = true;
                 }
                 else
                 {
-                    MessageBox.Show("Please Enter valid Return Quantity" +
-                        "","OmniMart360",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Please enter a valid return quantity.", "OmniMart360", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dataGridView1.Rows[e.RowIndex].Cells[3].Value = 0;
                 }
-             
             }
         }
+    }
+
         private void updateT(decimal productAmount) 
         {
             oldTotalBill = Convert.ToDecimal(textBill.Text);
