@@ -72,11 +72,11 @@ namespace RMS
                 /*
                  * Add Chart Here or create function
                  */
-                string queryChart = @"SELECT itemname, SUM(sellingrate * quantity) AS sales
+                string queryChart = @"SELECT itemname, COUNT(*) AS sales
                                             FROM solditems
                                             GROUP BY itemname
                                             ORDER BY sales DESC
-                                            LIMIT 9;
+                                            LIMIT 10;
                                             ;"; 
                 DataTable dt = new DataTable(); 
                 MySqlDataAdapter da = new MySqlDataAdapter(queryChart, c1); 
