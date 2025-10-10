@@ -1,10 +1,12 @@
 ﻿using System;
-
 using System.Data;
-
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
+using BusinessLayer;
+using Models;
+
 namespace RMS
 {
     public partial class SupplierPage : Form
@@ -16,6 +18,9 @@ namespace RMS
         DataTable t;
         string supName = "", supAdd = "", supEmail = "";
         long supMob = 0;
+
+        SupplierBLL bl = new SupplierBLL();
+
         public SupplierPage()
         {
             InitializeComponent();
@@ -78,7 +83,19 @@ namespace RMS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            SupplierModel supplier = new SupplierModel 
+            { 
+                SupplierName = textName.Text,
+                Mobile = Convert.ToInt64(textMobile.Text),
+                Email = textEmail.Text,
+                Address = textAddress.Text,
+                BankAcc=textBankAccount.Text,
+                IFSC = textIFSC.Text,
+                PAN = textPAN.Text
+            };
 
+            string msg = bl.AddSupplier(supplier);
+            MessageBox.Show(msg,"Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
 

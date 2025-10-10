@@ -1,0 +1,4 @@
+G:\Courses\GitHub projects\OmniMart360\Models\bin\Debug\Models.dll
+G:\Courses\GitHub projects\OmniMart360\Models\bin\Debug\Models.pdb
+G:\Courses\GitHub projects\OmniMart360\Models\obj\Debug\Models.dll
+G:\Courses\GitHub projects\OmniMart360\Models\obj\Debug\Models.pdb

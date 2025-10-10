@@ -53,6 +53,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dataSupplier = new System.Windows.Forms.DataGridView();
+            this.supplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -63,10 +67,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.supplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -83,9 +83,10 @@
             // 
             this.labelSupplierEmail.AutoSize = true;
             this.labelSupplierEmail.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSupplierEmail.Location = new System.Drawing.Point(5, 100);
+            this.labelSupplierEmail.Location = new System.Drawing.Point(7, 123);
+            this.labelSupplierEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSupplierEmail.Name = "labelSupplierEmail";
-            this.labelSupplierEmail.Size = new System.Drawing.Size(117, 15);
+            this.labelSupplierEmail.Size = new System.Drawing.Size(149, 20);
             this.labelSupplierEmail.TabIndex = 2;
             this.labelSupplierEmail.Text = "Supplier Email / ईमेल";
             // 
@@ -94,10 +95,11 @@
             this.textMobile.BackColor = System.Drawing.Color.White;
             this.textMobile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMobile.Location = new System.Drawing.Point(3, 76);
+            this.textMobile.Location = new System.Drawing.Point(4, 94);
+            this.textMobile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textMobile.MaxLength = 10;
             this.textMobile.Name = "textMobile";
-            this.textMobile.Size = new System.Drawing.Size(331, 21);
+            this.textMobile.Size = new System.Drawing.Size(441, 24);
             this.textMobile.TabIndex = 2;
             this.textMobile.TextChanged += new System.EventHandler(this.textMobile_TextChanged);
             // 
@@ -105,9 +107,10 @@
             // 
             this.labelSupplierMobile.AutoSize = true;
             this.labelSupplierMobile.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSupplierMobile.Location = new System.Drawing.Point(3, 60);
+            this.labelSupplierMobile.Location = new System.Drawing.Point(4, 74);
+            this.labelSupplierMobile.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSupplierMobile.Name = "labelSupplierMobile";
-            this.labelSupplierMobile.Size = new System.Drawing.Size(175, 15);
+            this.labelSupplierMobile.Size = new System.Drawing.Size(224, 20);
             this.labelSupplierMobile.TabIndex = 2;
             this.labelSupplierMobile.Text = "Supplier Mobile / मोबाईल क्रमांक ";
             // 
@@ -116,11 +119,12 @@
             this.textAddress.BackColor = System.Drawing.Color.White;
             this.textAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textAddress.Location = new System.Drawing.Point(5, 156);
+            this.textAddress.Location = new System.Drawing.Point(7, 192);
+            this.textAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textAddress.MaxLength = 100;
             this.textAddress.Multiline = true;
             this.textAddress.Name = "textAddress";
-            this.textAddress.Size = new System.Drawing.Size(331, 34);
+            this.textAddress.Size = new System.Drawing.Size(441, 41);
             this.textAddress.TabIndex = 4;
             this.textAddress.TextChanged += new System.EventHandler(this.textAddress_TextChanged);
             // 
@@ -128,9 +132,10 @@
             // 
             this.labelSupplierAddress.AutoSize = true;
             this.labelSupplierAddress.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSupplierAddress.Location = new System.Drawing.Point(5, 140);
+            this.labelSupplierAddress.Location = new System.Drawing.Point(7, 172);
+            this.labelSupplierAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSupplierAddress.Name = "labelSupplierAddress";
-            this.labelSupplierAddress.Size = new System.Drawing.Size(127, 15);
+            this.labelSupplierAddress.Size = new System.Drawing.Size(162, 20);
             this.labelSupplierAddress.TabIndex = 2;
             this.labelSupplierAddress.Text = "Supplier Address / पत्ता ";
             // 
@@ -139,10 +144,11 @@
             this.textName.BackColor = System.Drawing.Color.White;
             this.textName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textName.Location = new System.Drawing.Point(5, 36);
+            this.textName.Location = new System.Drawing.Point(7, 44);
+            this.textName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textName.MaxLength = 40;
             this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(332, 21);
+            this.textName.Size = new System.Drawing.Size(442, 24);
             this.textName.TabIndex = 1;
             this.textName.TextChanged += new System.EventHandler(this.textName_TextChanged);
             // 
@@ -150,9 +156,10 @@
             // 
             this.labelSupplierName.AutoSize = true;
             this.labelSupplierName.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSupplierName.Location = new System.Drawing.Point(2, 18);
+            this.labelSupplierName.Location = new System.Drawing.Point(3, 22);
+            this.labelSupplierName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSupplierName.Name = "labelSupplierName";
-            this.labelSupplierName.Size = new System.Drawing.Size(177, 15);
+            this.labelSupplierName.Size = new System.Drawing.Size(225, 20);
             this.labelSupplierName.TabIndex = 2;
             this.labelSupplierName.Text = "Supplier Name / पुरवठादाराचे नाव ";
             // 
@@ -175,10 +182,10 @@
             this.groupBox1.Controls.Add(this.labelSupplierName);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(344, 355);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(458, 436);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Supplier Details";
@@ -188,41 +195,45 @@
             this.textPAN.BackColor = System.Drawing.Color.White;
             this.textPAN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textPAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPAN.Location = new System.Drawing.Point(3, 289);
+            this.textPAN.Location = new System.Drawing.Point(4, 356);
+            this.textPAN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textPAN.MaxLength = 80;
             this.textPAN.Name = "textPAN";
-            this.textPAN.Size = new System.Drawing.Size(332, 21);
-            this.textPAN.TabIndex = 3;
+            this.textPAN.Size = new System.Drawing.Size(442, 24);
+            this.textPAN.TabIndex = 7;
             // 
             // textIFSC
             // 
             this.textIFSC.BackColor = System.Drawing.Color.White;
             this.textIFSC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textIFSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textIFSC.Location = new System.Drawing.Point(3, 249);
+            this.textIFSC.Location = new System.Drawing.Point(4, 306);
+            this.textIFSC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textIFSC.MaxLength = 80;
             this.textIFSC.Name = "textIFSC";
-            this.textIFSC.Size = new System.Drawing.Size(332, 21);
-            this.textIFSC.TabIndex = 3;
+            this.textIFSC.Size = new System.Drawing.Size(442, 24);
+            this.textIFSC.TabIndex = 6;
             // 
             // textBankAccount
             // 
             this.textBankAccount.BackColor = System.Drawing.Color.White;
             this.textBankAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBankAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBankAccount.Location = new System.Drawing.Point(3, 209);
+            this.textBankAccount.Location = new System.Drawing.Point(4, 257);
+            this.textBankAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBankAccount.MaxLength = 80;
             this.textBankAccount.Name = "textBankAccount";
-            this.textBankAccount.Size = new System.Drawing.Size(332, 21);
-            this.textBankAccount.TabIndex = 3;
+            this.textBankAccount.Size = new System.Drawing.Size(442, 24);
+            this.textBankAccount.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 272);
+            this.label5.Location = new System.Drawing.Point(4, 335);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 15);
+            this.label5.Size = new System.Drawing.Size(113, 20);
             this.label5.TabIndex = 2;
             this.label5.Text = "PAN / पॅन क्रमांक";
             // 
@@ -230,9 +241,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 233);
+            this.label4.Location = new System.Drawing.Point(4, 287);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 15);
+            this.label4.Size = new System.Drawing.Size(165, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "IFSC / आयएफएससी कोड";
             // 
@@ -240,9 +252,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 193);
+            this.label3.Location = new System.Drawing.Point(4, 238);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 15);
+            this.label3.Size = new System.Drawing.Size(209, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Bank Account / बँक खाते क्रमांक";
             // 
@@ -251,20 +264,20 @@
             this.textEmail.BackColor = System.Drawing.Color.White;
             this.textEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEmail.Location = new System.Drawing.Point(5, 116);
+            this.textEmail.Location = new System.Drawing.Point(7, 143);
+            this.textEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textEmail.MaxLength = 80;
             this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(332, 21);
+            this.textEmail.Size = new System.Drawing.Size(442, 24);
             this.textEmail.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(3, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 18);
+            this.label1.Size = new System.Drawing.Size(132, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Add Supplier";
             // 
@@ -276,9 +289,10 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClear.Location = new System.Drawing.Point(182, 6);
+            this.btnClear.Location = new System.Drawing.Point(242, 7);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 29);
+            this.btnClear.Size = new System.Drawing.Size(100, 36);
             this.btnClear.TabIndex = 6;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -292,9 +306,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(259, 6);
+            this.btnAdd.Location = new System.Drawing.Point(344, 7);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 29);
+            this.btnAdd.Size = new System.Drawing.Size(100, 36);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -308,9 +323,9 @@
             this.panel2.Controls.Add(this.rightPan);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(979, 448);
+            this.panel2.Size = new System.Drawing.Size(1305, 551);
             this.panel2.TabIndex = 3;
             // 
             // panel7
@@ -318,10 +333,10 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(234)))), ((int)(((byte)(238)))));
             this.panel7.Controls.Add(this.dataSupplier);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 82);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2);
+            this.panel7.Location = new System.Drawing.Point(0, 101);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(619, 366);
+            this.panel7.Size = new System.Drawing.Size(825, 450);
             this.panel7.TabIndex = 13;
             // 
             // dataSupplier
@@ -360,6 +375,7 @@
             this.dataSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataSupplier.EnableHeadersVisualStyles = false;
             this.dataSupplier.Location = new System.Drawing.Point(0, 0);
+            this.dataSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataSupplier.Name = "dataSupplier";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -373,131 +389,9 @@
             this.dataSupplier.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(3);
             this.dataSupplier.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataSupplier.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataSupplier.Size = new System.Drawing.Size(619, 366);
+            this.dataSupplier.Size = new System.Drawing.Size(825, 450);
             this.dataSupplier.TabIndex = 4;
             this.dataSupplier.TabStop = false;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(234)))), ((int)(((byte)(238)))));
-            this.panel6.Controls.Add(this.textSearch);
-            this.panel6.Controls.Add(this.btnSearch);
-            this.panel6.Controls.Add(this.button1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 42);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(619, 40);
-            this.panel6.TabIndex = 12;
-            // 
-            // textSearch
-            // 
-            this.textSearch.BackColor = System.Drawing.Color.White;
-            this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.Location = new System.Drawing.Point(13, 9);
-            this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(290, 22);
-            this.textSearch.TabIndex = 9;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(111)))), ((int)(((byte)(133)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSearch.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSearch.Location = new System.Drawing.Point(319, 9);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(126, 22);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "Search / शोधा";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(588, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(619, 42);
-            this.panel5.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(326, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Supplier Information / पुरवठादाराची माहिती";
-            // 
-            // rightPan
-            // 
-            this.rightPan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
-            this.rightPan.Controls.Add(this.panel4);
-            this.rightPan.Controls.Add(this.panel3);
-            this.rightPan.Controls.Add(this.panel1);
-            this.rightPan.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightPan.Location = new System.Drawing.Point(619, 0);
-            this.rightPan.Margin = new System.Windows.Forms.Padding(2);
-            this.rightPan.Name = "rightPan";
-            this.rightPan.Padding = new System.Windows.Forms.Padding(8);
-            this.rightPan.Size = new System.Drawing.Size(360, 448);
-            this.rightPan.TabIndex = 10;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(8, 42);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(344, 355);
-            this.panel4.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnClear);
-            this.panel3.Controls.Add(this.btnAdd);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(8, 397);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(344, 43);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(8, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 34);
-            this.panel1.TabIndex = 0;
             // 
             // supplierName
             // 
@@ -525,14 +419,139 @@
             this.edit.Text = "Edit";
             this.edit.UseColumnTextForButtonValue = true;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(234)))), ((int)(((byte)(238)))));
+            this.panel6.Controls.Add(this.textSearch);
+            this.panel6.Controls.Add(this.btnSearch);
+            this.panel6.Controls.Add(this.button1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 52);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(825, 49);
+            this.panel6.TabIndex = 12;
+            // 
+            // textSearch
+            // 
+            this.textSearch.BackColor = System.Drawing.Color.White;
+            this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textSearch.Location = new System.Drawing.Point(17, 11);
+            this.textSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(386, 26);
+            this.textSearch.TabIndex = 9;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(111)))), ((int)(((byte)(133)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSearch.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSearch.Location = new System.Drawing.Point(425, 11);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(168, 27);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "Search / शोधा";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(784, 12);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(27, 25);
+            this.button1.TabIndex = 8;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(825, 52);
+            this.panel5.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(408, 28);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Supplier Information / पुरवठादाराची माहिती";
+            // 
+            // rightPan
+            // 
+            this.rightPan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
+            this.rightPan.Controls.Add(this.panel4);
+            this.rightPan.Controls.Add(this.panel3);
+            this.rightPan.Controls.Add(this.panel1);
+            this.rightPan.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rightPan.Location = new System.Drawing.Point(825, 0);
+            this.rightPan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rightPan.Name = "rightPan";
+            this.rightPan.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.rightPan.Size = new System.Drawing.Size(480, 551);
+            this.rightPan.TabIndex = 10;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.groupBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(11, 52);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(458, 436);
+            this.panel4.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnClear);
+            this.panel3.Controls.Add(this.btnAdd);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(11, 488);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(458, 53);
+            this.panel3.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(11, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(458, 42);
+            this.panel1.TabIndex = 0;
+            // 
             // SupplierPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(979, 448);
+            this.ClientSize = new System.Drawing.Size(1305, 551);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SupplierPage";
             this.Text = "SupplierPage";
             this.Load += new System.EventHandler(this.SupplierPage_Load);

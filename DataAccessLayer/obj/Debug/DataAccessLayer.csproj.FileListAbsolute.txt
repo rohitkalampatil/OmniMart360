@@ -1,0 +1,7 @@
+G:\Courses\GitHub projects\OmniMart360\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+G:\Courses\GitHub projects\OmniMart360\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+G:\Courses\GitHub projects\OmniMart360\DataAccessLayer\bin\Debug\Models.dll
+G:\Courses\GitHub projects\OmniMart360\DataAccessLayer\bin\Debug\Models.pdb
+G:\Courses\GitHub projects\OmniMart360\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+G:\Courses\GitHub projects\OmniMart360\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+G:\Courses\GitHub projects\OmniMart360\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

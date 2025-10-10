@@ -94,11 +94,12 @@ namespace RMS
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Check if the click is on a button column
+            // index of invoice no column
             if (e.ColumnIndex == 5 && e.RowIndex >= 0)
             {
-                // Get the name from the Name column
-                string name = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                int invNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+                // Get the invoice no from the invoice no column
+               
+                int invNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 
                 ReceiptUpdate obj = new ReceiptUpdate(invNo);
                 obj.ShowDialog();   

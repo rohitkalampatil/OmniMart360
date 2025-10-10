@@ -1,0 +1,8 @@
+G:\Courses\GitHub projects\OmniMart360\BusinessLayer\bin\Debug\BusinessLayer.dll
+G:\Courses\GitHub projects\OmniMart360\BusinessLayer\bin\Debug\BusinessLayer.pdb
+G:\Courses\GitHub projects\OmniMart360\BusinessLayer\bin\Debug\DataAccessLayer.dll
+G:\Courses\GitHub projects\OmniMart360\BusinessLayer\bin\Debug\Models.dll
+G:\Courses\GitHub projects\OmniMart360\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+G:\Courses\GitHub projects\OmniMart360\BusinessLayer\bin\Debug\Models.pdb
+G:\Courses\GitHub projects\OmniMart360\BusinessLayer\obj\Debug\BusinessLayer.dll
+G:\Courses\GitHub projects\OmniMart360\BusinessLayer\obj\Debug\BusinessLayer.pdb
