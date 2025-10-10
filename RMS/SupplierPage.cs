@@ -1,10 +1,17 @@
 ﻿using System;
-
 using System.Data;
-
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+
+using Models;
+using BusinessLayer;
+
 using MySql.Data.MySqlClient;
+
+
+
+
+
 namespace RMS
 {
     public partial class SupplierPage : Form
@@ -16,6 +23,15 @@ namespace RMS
         DataTable t;
         string supName = "", supAdd = "", supEmail = "";
         long supMob = 0;
+
+
+
+
+
+
+        SupplierBLL bl = new SupplierBLL();
+
+
         public SupplierPage()
         {
             InitializeComponent();
@@ -47,6 +63,33 @@ namespace RMS
                     c1.Close();
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            SupplierModel supplier = new SupplierModel 
+            {
+                
+            };
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void PopulateDataGridView(DataTable table)
         {
             dataSupplier.Rows.Clear(); // Clear existing rows
@@ -76,10 +119,7 @@ namespace RMS
             textAddress.Text = "";
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
 
         private void textName_TextChanged(object sender, EventArgs e)
