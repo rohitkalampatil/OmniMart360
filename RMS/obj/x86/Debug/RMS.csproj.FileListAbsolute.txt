@@ -233,3 +233,6 @@ G:\OmniMart\Billing Soft V1.0 main\RMS-main\RMS\bin\Debug\BusinessLayer.pdb
 G:\OmniMart\Billing Soft V1.0 main\RMS-main\RMS\bin\Debug\Models.pdb
 G:\OmniMart\Billing Soft V1.0 main\RMS-main\RMS\bin\Debug\DataAccessLayer.pdb
 G:\OmniMart\Billing Soft V1.0 main\RMS-main\RMS\obj\x86\Debug\RMS.SupplierUpdate.resources
+G:\OmniMart\Billing Software main\RMS-main\RMS\bin\Debug\RMS.exe.config
+G:\OmniMart\Billing Software main\RMS-main\RMS\obj\x86\Debug\RMS.exe
+G:\OmniMart\Billing Software main\RMS-main\RMS\obj\x86\Debug\RMS.pdb
